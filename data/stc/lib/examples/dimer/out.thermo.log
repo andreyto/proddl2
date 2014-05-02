@@ -1,0 +1,27 @@
+ Logfile: /Users/rbo/proj/stc/test/dimer/out.thermo.log
+ Structural Thermodynamic Calculations Detailed Results
+ Date: Wed Mar 29 15:16:30 2006
+
+ Please enter the amino acid definition file
+Amino defs file: ../../lib/amino.def
+Number of residues read: 33
+
+ Please enter the access output file
+Reading Complex fname: /Users/rbo/proj/stc/test/dimer/out.folded.acc
+Number of atoms processed: 567
+ Please enter the access output file
+Reading Free fname: /Users/rbo/proj/stc/test/dimer/out.unfolded.acc
+Number of atoms processed: 567
+Done reading access files
+
+
+Parameter Settings
+
+  1) Change sConf: current value = -27.194
+  2) Change temperature: current value =  25.000
+  3) Options for Sbb: current value = 0
+  4) Options for Sex->u: current value = 0
+  5) Run calculations
+  0) Exit program
+
+npAsaTot, pAsaTot, sConf = 221.994800 59.113500 -27.193758

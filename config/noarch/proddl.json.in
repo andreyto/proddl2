@@ -1,0 +1,39 @@
+{
+	"home_dir": "${home_dir}",
+	"data_dir": "${data_dir}",
+	"wrapper": "${wrapper}",
+    "makeflow_bin": "makeflow",
+    "scan": {
+        "recId": "r", 
+        "ligId": "l", 
+        "chainIdR": "*", 
+        "chainIdL": "*", 
+        "alpha": 0.4, 
+        "zapFlexResidues": false, 
+        "gridStep": 1.5, 
+        "cutOffFft": 9.0, 
+        "angleStepDeg": 10, 
+        "anglesFile": "${data_dir}/rotgrid/ang10.dat", 
+        "alphaFlexResidues": 0.4, 
+        "maxNRigidMatches": 30000, 
+        "maxNTrans": 10, 
+        "maxNTransInp": 10000, 
+        "maxValCorr": -10.0, 
+        "doClusterTranslations": false, 
+        "clusterRadiusTrans": 5.0, 
+        "nMultimer": 0, 
+        "maxRmsdSymm": 8.0, 
+        "logLevel": 6, 
+        "testMode": 0, 
+        "testMaxRot": 10, 
+        "mmForceField": "charmm", 
+        "potentialName": "ljComp", 
+        "lj": {
+            "uniform": {
+                "sigma": 3.3, 
+                "eps": 0.46, 
+                "method": "scaled"
+            }
+        }
+    }
+}

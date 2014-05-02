@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#Wrapper script that sets up the necessary environment
+#and then executes the program that was passed to it
+#as its argument.
+#It adds its own directory and some subdirectories
+#to the PATH, so the programs from those locations 
+#can be passed as filenames without paths.
+
+_this_dir=$(cd $(dirname "$0") && pwd)
+_this_base=$(basename "$0")
+_this_file="$_this_dir/$_this_base"
+export @PROJECT_NAME@_WRAPPER="$_this_file"
+export @PROJECT_NAME@_HOME="$_this_dir/.."
+export @PROJECT_NAME@_ROOT="$_this_dir/../.."
+export @PROJECT_NAME@_CONF_DIR="$@PROJECT_NAME@_HOME/config"
+export @PROJECT_NAME@_CONFIG="$@PROJECT_NAME@_CONF_DIR/@CONF_BASE@"
+export @PROJECT_NAME@_DATA_DIR="$@PROJECT_NAME@_HOME/@DATA_DIR_BASE@"
+export @PROJECT_NAME@_TEST_DATA_DIR="$@PROJECT_NAME@_HOME/@TEST_DATA_DIR_BASE@"
+. "$@PROJECT_NAME@_CONF_DIR/@DEPS_RC_BASE@"
+_py_inst_dir="$@PROJECT_NAME@_HOME/@PY_INSTALL_SUBDIR@"
+export PATH="$_this_dir":"$_py_inst_dir":$PATH
+export PYTHONPATH="$_py_inst_dir":$PYTHONPATH
+
+## This should allow developing and testing of Python code
+## in modules (but not in entry point scripts) without running
+## build or install every time, assuming that everything else
+## was ran through install before. Define the CMake variable
+## at build time. Undefine for production build.
+
+if [[ "@DEVEL_MODE@" == "1" ]]; then
+	export PYTHONPATH="@PY_SOURCE_PACKAGE_DIR@":$PYTHONPATH
+fi
+
+exec "$@"
+

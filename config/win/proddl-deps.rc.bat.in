@@ -1,0 +1,8 @@
+set _deps_root=%@PROJECT_NAME@_ROOT%\deps
+
+set IMP_HOME=%_deps_root%\IMP-2.1.1
+set PYTHON_HOME=%_deps_root%\Python27
+
+PATH=%_deps_root%\bin;%IMP_HOME%\bin;%PYTHON_HOME%;%PATH%
+
+set PYTHONPATH=%IMP_HOME%\python;%IMP_HOME%\bin;%PYTHONPATH%

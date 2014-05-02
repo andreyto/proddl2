@@ -1,0 +1,30 @@
+ Logfile: /Users/rbo/proj/stc/test/xuw/out.thermo.log
+ Structural Thermodynamic Calculations Detailed Results
+ Date: Thu Mar 30 11:51:55 2006
+
+ Please enter the amino acid definition file
+Amino defs file: custom.amino.def
+Number of residues read: 34
+
+ Please enter the access output file
+Reading Complex fname: /Users/rbo/proj/stc/test/xuw/out.complex.acc
+Number of atoms processed: 606
+ Please enter the access output file
+Reading Free fname: /Users/rbo/proj/stc/test/xuw/out.ligand.acc
+Number of atoms processed: 576
+ Please enter the access output file
+Reading Free fname: /Users/rbo/proj/stc/test/xuw/out.enzyme.acc
+Number of atoms processed: 30
+Done reading access files
+
+
+Parameter Settings
+
+  1) Change sConf: current value =  -5.744
+  2) Change temperature: current value =  25.000
+  3) Options for Sbb: current value = 0
+  4) Options for Sex->u: current value = 0
+  5) Run calculations
+  0) Exit program
+
+npAsaTot, pAsaTot, sConf = 595.404700 183.145300 -5.743602

@@ -1,0 +1,9 @@
+#ifndef AT_STDLIMITS_H__
+#define AT_STDLIMITS_H__
+
+/* <limits> to use if the compiler's library lacks it */
+
+#include <blitz/blitz.h>
+#include <blitz/limits-hack.h>
+
+#endif //AT_STDLIMITS_H__

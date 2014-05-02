@@ -1,0 +1,8 @@
+
+This example is on how to use a batch script to run stc without graphics 
+
+1) Edit batch_stc and indicate where you have installed stc 
+
+2) batch_stc
+
+Output is available in out.dgbind

@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="stc, structural, thermodynamics, calculations">
+<TITLE>stc release 5.0</TITLE>
+</HEAD>
+
+<H2>
+Release Notes for stc version 5.0 to 5.3
+</H2>
+<OL>
+
+<P>
+<LI> Implementation of the <B> batch button </B> to
+process multiple pdb files. Provide example usage in lib/examples.
+
+<P>
+<LI> <B>The main screen shows the current residue library in use</B>.
+This makes it easier for the user to find where the residues/atoms
+are defined and whether the user agrees with the parameters set. Users
+can set a custom residue library in the entry box provided or set it in the
+./stc.defaults file.
+
+<P>
+<LI> <B>stc tcl/tk source code made available</B>. Perhaps there are
+others who wish to expand stc.
+
+<P>
+<LI> <B>For calc asa, stc notifies the user about missing atoms </B>. In older
+versions, stc would only make a note in the log file and move on.
+
+<P>
+<LI> Fixed bug involving the <B>customization of the residue library </B>.
+In previous versions, adding a blank line to the residue
+library caused edpdb to dump.
+
+<P>
+<LI> Fixed bug involving pdb files where the keyword TER has arguments
+following it. I didn't realize that this was valid. Stc ignores any
+arguments on the same line which starts with TER.
+
+<P>
+<LI> Software <B>copies stc.defaults to the users current directory</B>.
+This should make it easier for users to understand what options they
+can customize.
+
+<P>
+<LI> Fix C1 Glu atom in jrb.free.pdb example, should be CD. 
+
+<P>
+<LI> Simplify the installation script. Also remove the sbin directory, it
+is easier to have one bin directory instead of bin (executables)
+and sbin (scripts).
+
+<P>
+<LI> <B>Update documentation</B> and place STC example runs in lib directory.
+More extensive example data are included.
+
+<P>
+<LI> Allow user to set the output directory on the main screen. This is
+useful for the mac aqua version where /tmp is the default setting.
+</OL>
+
+<P>
+<HR>
+<P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

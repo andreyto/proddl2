@@ -1,0 +1,70 @@
+
+<HTML>
+<HEAD>
+<TITLE>stc - Structural Thermodynamics Calculations</TITLE>
+<META NAME="keywords" CONTENT="free energy of binding, entropy, accessible surface area, stc, structural thermodynamics, pence">
+</HEAD>
+
+<body bgcolor=white text=black>
+
+<H3> How to use stc in batch mode <HR></H3>
+
+You have several structure files and you want to see which one
+has the most favorable thermodynamics. This window allows the user
+to do this quickly.
+
+<P> First you want to place all of your pdb files in one directory
+as shown in the <B>lib/examples/batch</B>. In this example,
+the pdb files are
+made up of a ligand and an enzyme separated by a TER statement.
+When you are ready,
+cd to that directory, type "stc"  and press the "Batch" button.
+
+<P>
+<img src="images/batch.jpg">
+<P>
+
+Currently there are not alot of options, the most interesting being that
+you can choose which variables you want to display as the results are
+being calculated. Your choice of variables come from the typical 
+<a href="files/out.basic.html"> basic output file </A>.
+
+<P>
+<img src="images/batch2.jpg">
+<P>
+
+Each pdb file is processed in alphabetic order, first ASA output files
+are generated and thermodynamic calculations done with detailed results.
+<P>
+A one-line summary of the thermodynamic results is placed in the 
+<a href="files/stc.batch.html">stc.batch results </A> file and it is the user's
+responsibility to sort the file if need be.
+<P>
+Previous versions of stc included a <a href="files/old_batch_stc.html">
+batch script </A> which users could
+modify if you want to bypass the stc graphics window. This
+should still be valid but it does take work to understand
+how to set it up. An example dataset for which you can try this script is
+found in <B> lib/examples/batch2 </B>.
+
+</OL>
+
+<P>
+<HR>
+<P>
+<a href="index.html">
+<img src="images/arrow.gif" border=0>
+Back to stc home page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

@@ -1,0 +1,776 @@
+ Structural Thermodynamic Calculations Detailed Results
+ Date: Thu Mar 30 11:51:55 2006
+
+
+   Section 1: Data File Information
+   ********************************
+
+ Complex data file: /Users/rbo/proj/stc/test/xuw/out.complex.acc
+ Number of atoms: 606
+
+ Structure #1 data file: /Users/rbo/proj/stc/test/xuw/out.ligand.acc
+ Number of atoms: 576
+
+ Structure #2 data file: /Users/rbo/proj/stc/test/xuw/out.enzyme.acc
+ Number of atoms: 30
+
+
+ Residues Unfolding: None
+
+
+ Section 2a: Individual Atom Differences in ASA(ligand)
+ *******************************************************
+
+ ResId  Name   Atom     DASA  Definition 
+                         Å2                 
+    91   GLY      N   7.4119  polar
+    91   GLY     CA   1.6418  nonpolar
+    91   GLY      C  -1.1230  nonpolar
+    91   GLY      O -18.8123  polar
+    92   LYS      N   3.7100  polar
+    92   LYS     CA  -0.0740  nonpolar
+    92   LYS     CB  13.1923  nonpolar
+    92   LYS     CG   0.4217  nonpolar
+    92   LYS     CD  25.2736  nonpolar
+    92   LYS     CE  12.1252  nonpolar
+    92   LYS     NZ  28.2356  polar
+    92   LYS      C  -0.7231  nonpolar
+    92   LYS      O  -7.9356  polar
+    93   SER      N   0.3291  polar
+    93   SER     CA   3.8574  nonpolar
+    93   SER     CB   7.9603  nonpolar
+    93   SER     OG  -3.4181  polar
+    93   SER      C   0.4061  nonpolar
+    93   SER      O   1.1092  polar
+    94   GLU      N  -8.2025  polar
+    94   GLU     CA  -0.3609  nonpolar
+    94   GLU     CB  -2.7100  nonpolar
+    94   GLU     CG  23.0680  nonpolar
+    94   GLU     CD   7.7624  nonpolar
+    94   GLU    OE1   2.9171  polar
+    94   GLU    OE2   6.1026  polar
+    94   GLU      C   0.0341  nonpolar
+    94   GLU      O  -0.1594  polar
+    95   GLU      N  -0.8339  polar
+    95   GLU     CA  -9.6827  nonpolar
+    95   GLU     CB -20.2211  nonpolar
+    95   GLU     CG  12.8599  nonpolar
+    95   GLU     CD   7.5724  nonpolar
+    95   GLU    OE1  -5.5405  polar
+    95   GLU    OE2  18.7300  polar
+    95   GLU      C  -0.2736  nonpolar
+    95   GLU      O -17.8826  polar
+    96   GLU     CA  -1.8292  nonpolar
+    96   GLU     CB  -1.3517  nonpolar
+    96   GLU     CG -11.6678  nonpolar
+    96   GLU     CD  -7.6444  nonpolar
+    96   GLU    OE1 -10.4443  polar
+    96   GLU    OE2  23.8196  polar
+    96   GLU      C  -0.1990  nonpolar
+    96   GLU      O  -0.3986  polar
+    97   LEU     CG   5.0617  nonpolar
+    97   LEU    CD1  14.8701  nonpolar
+    97   LEU    CD2   5.8009  nonpolar
+    98   SER     CA  -1.8458  nonpolar
+    98   SER     CB  -7.6961  nonpolar
+    98   SER     OG -18.1133  polar
+    98   SER      C   1.6381  nonpolar
+    98   SER      O  -4.9166  polar
+    99   ASP     CA   2.2437  nonpolar
+    99   ASP     CB  -7.6042  nonpolar
+    99   ASP     CG   0.7029  nonpolar
+    99   ASP    OD1  -5.2192  polar
+    99   ASP    OD2  -6.0505  polar
+    99   ASP      C  -0.1606  nonpolar
+    99   ASP      O  -0.3429  polar
+   100   LEU      N  -0.2015  polar
+   100   LEU     CA  -0.4641  nonpolar
+   100   LEU     CG  -6.0999  nonpolar
+   100   LEU    CD1  27.8430  nonpolar
+   100   LEU    CD2  20.5096  nonpolar
+   101   PHE     CA   0.3451  nonpolar
+   101   PHE     CB  -4.5974  nonpolar
+   101   PHE     CG  -2.0832  nonpolar
+   101   PHE    CD1  -3.9353  nonpolar
+   101   PHE    CD2  -0.9304  nonpolar
+   101   PHE    CE1   7.4756  nonpolar
+   101   PHE    CE2  -1.3921  nonpolar
+   101   PHE     CZ  -1.4451  nonpolar
+   102   ARG      N  -0.1104  polar
+   102   ARG     CA  -1.4743  nonpolar
+   102   ARG     CB -16.6791  nonpolar
+   102   ARG     CG  18.6816  nonpolar
+   102   ARG     CD  16.6266  nonpolar
+   102   ARG     NE   9.7414  polar
+   102   ARG     CZ  -2.9380  nonpolar
+   102   ARG    NH1   6.6338  polar
+   102   ARG    NH2  -3.4481  polar
+   102   ARG      C   0.0727  nonpolar
+   102   ARG      O   9.8612  polar
+   103   MET     CA   0.6175  nonpolar
+   103   MET     CB   0.3133  nonpolar
+   103   MET     CG -11.4914  nonpolar
+   103   MET     SD  30.9374  nonpolar
+   103   MET     CE  -0.3859  nonpolar
+   103   MET      C   2.0812  nonpolar
+   103   MET      O  18.3526  polar
+   104   PHE     CA   1.6051  nonpolar
+   104   PHE     CB   0.1189  nonpolar
+   104   PHE    CD1   6.2939  nonpolar
+   104   PHE    CE1   7.6903  nonpolar
+   104   PHE    CE2   6.2935  nonpolar
+   104   PHE     CZ  11.7893  nonpolar
+   104   PHE      C   0.8047  nonpolar
+   104   PHE      O  -0.4834  polar
+   105   ASP      N   0.4101  polar
+   105   ASP     CB   0.6983  nonpolar
+   105   ASP    OD2   3.9345  polar
+   105   ASP      C   0.5216  nonpolar
+   105   ASP      O   2.8234  polar
+   106   LYS     CA  -3.8872  nonpolar
+   106   LYS     CB   5.9238  nonpolar
+   106   LYS     CG -18.0709  nonpolar
+   106   LYS     CD -12.4533  nonpolar
+   106   LYS     CE  -0.1444  nonpolar
+   106   LYS     NZ  16.6188  polar
+   106   LYS      C  -2.1109  nonpolar
+   106   LYS      O  -2.4526  polar
+   107   ASN      N   0.1507  polar
+   107   ASN     CA   4.2309  nonpolar
+   107   ASN     CB  -0.2675  nonpolar
+   107   ASN     CG  -1.0203  nonpolar
+   107   ASN    OD1 -23.1062  polar
+   107   ASN    ND2  11.1169  polar
+   107   ASN      C  -1.5736  nonpolar
+   107   ASN      O  -0.9002  polar
+   108   ALA      N  -0.2852  polar
+   108   ALA     CA  -5.2971  nonpolar
+   108   ALA     CB -10.5675  nonpolar
+   108   ALA      C   0.5732  nonpolar
+   108   ALA      O   4.4816  polar
+   109   ASP      N  -3.7255  polar
+   109   ASP     CA  -0.9725  nonpolar
+   109   ASP     CB  -5.7439  nonpolar
+   109   ASP     CG  -2.4715  nonpolar
+   109   ASP    OD2  12.5192  polar
+   109   ASP      C   0.7649  nonpolar
+   109   ASP      O -11.0875  polar
+   110   GLY      N   3.0916  polar
+   110   GLY     CA   3.9709  nonpolar
+   110   GLY      O   0.8391  polar
+   111   TYR     CB  -7.3355  nonpolar
+   111   TYR     CG   0.0601  nonpolar
+   111   TYR    CD1   3.4456  nonpolar
+   111   TYR    CD2  -4.3146  nonpolar
+   111   TYR    CE1  20.9048  nonpolar
+   111   TYR    CE2  -7.4972  nonpolar
+   111   TYR     CZ   0.9462  nonpolar
+   111   TYR     OH   1.5603  polar
+   111   TYR      C   0.2587  nonpolar
+   111   TYR      O  -4.4224  polar
+   112   ILE     CA   0.2895  nonpolar
+   112   ILE     CB   2.1310  nonpolar
+   112   ILE    CG2   1.8039  nonpolar
+   112   ILE    CD1   4.5696  nonpolar
+   112   ILE      C   0.0307  nonpolar
+   113   ASP      N   0.3953  polar
+   113   ASP     CB  -0.4333  nonpolar
+   113   ASP     CG  -0.4435  nonpolar
+   113   ASP    OD2   2.3950  polar
+   114   LEU      N   1.7053  polar
+   114   LEU     CB   5.3747  nonpolar
+   114   LEU    CD1  -5.9761  nonpolar
+   114   LEU    CD2  -3.8906  nonpolar
+   115   GLU      N   0.0568  polar
+   115   GLU     CA   0.1197  nonpolar
+   115   GLU     CB   2.4421  nonpolar
+   115   GLU     CG   3.9517  nonpolar
+   115   GLU     CD   3.5150  nonpolar
+   115   GLU    OE1  -1.4801  polar
+   115   GLU    OE2   2.4118  polar
+   115   GLU      C  -0.1461  nonpolar
+   115   GLU      O   3.9191  polar
+   116   GLU     CG   1.9954  nonpolar
+   116   GLU    OE2  -1.4862  polar
+   116   GLU      C   0.1341  nonpolar
+   116   GLU      O  -0.6741  polar
+   117   LEU     CA   0.0882  nonpolar
+   117   LEU     CG  -1.0147  nonpolar
+   117   LEU    CD1   5.2187  nonpolar
+   117   LEU    CD2  -1.3978  nonpolar
+   118   LYS     CA  -0.1418  nonpolar
+   118   LYS     CB   1.6845  nonpolar
+   118   LYS     CG  -1.4249  nonpolar
+   118   LYS     CD   2.1376  nonpolar
+   118   LYS     CE  -9.8801  nonpolar
+   118   LYS     NZ -20.0899  polar
+   118   LYS      O   0.9915  polar
+   119   ILE     CA  -2.5111  nonpolar
+   119   ILE    CG1 -11.7089  nonpolar
+   119   ILE    CG2  14.2148  nonpolar
+   119   ILE    CD1  -8.9983  nonpolar
+   119   ILE      O  -1.4539  polar
+   120   MET      N   0.0531  polar
+   120   MET     CA  -0.7113  nonpolar
+   120   MET     CB   1.0309  nonpolar
+   120   MET     CG  -2.4559  nonpolar
+   120   MET     SD   2.2192  nonpolar
+   120   MET     CE -23.9704  nonpolar
+   120   MET      O  -0.9625  polar
+   121   LEU     CA   0.7784  nonpolar
+   121   LEU     CB  10.1141  nonpolar
+   121   LEU    CD1   9.3647  nonpolar
+   121   LEU    CD2  32.9599  nonpolar
+   121   LEU      C   0.0046  nonpolar
+   122   GLN      N   0.2192  polar
+   122   GLN     CA  -0.4085  nonpolar
+   122   GLN     CB  -3.9207  nonpolar
+   122   GLN     CG  -7.0927  nonpolar
+   122   GLN     CD  -0.6870  nonpolar
+   122   GLN    OE1  26.8380  polar
+   122   GLN    NE2 -32.7715  polar
+   122   GLN      C   0.7131  nonpolar
+   122   GLN      O  11.7052  polar
+   123   ALA      N   0.3308  polar
+   123   ALA     CA   3.6035  nonpolar
+   123   ALA     CB -11.8565  nonpolar
+   123   ALA      C   0.5714  nonpolar
+   123   ALA      O   1.9941  polar
+   124   THR      N  -0.3133  polar
+   124   THR     CA  -2.1089  nonpolar
+   124   THR     CB   4.6384  nonpolar
+   124   THR    OG1  -5.4398  polar
+   124   THR    CG2  45.4620  nonpolar
+   124   THR      C   3.0884  nonpolar
+   124   THR      O  22.0422  polar
+   125   GLY      N  -2.6209  polar
+   125   GLY     CA -14.1830  nonpolar
+   125   GLY      C   3.9072  nonpolar
+   125   GLY      O   1.1944  polar
+   126   GLU      N   3.6795  polar
+   126   GLU     CA   9.0502  nonpolar
+   126   GLU     CB   7.3911  nonpolar
+   126   GLU     CG  19.1172  nonpolar
+   126   GLU     CD   1.8414  nonpolar
+   126   GLU    OE1   6.1704  polar
+   126   GLU    OE2  -0.0588  polar
+   126   GLU      C  -2.4888  nonpolar
+   126   GLU      O -16.3973  polar
+   127   THR      N   0.4314  polar
+   127   THR     CA  -5.0708  nonpolar
+   127   THR     CB   7.3362  nonpolar
+   127   THR    OG1  10.1647  polar
+   127   THR    CG2  -4.9251  nonpolar
+   127   THR      C  -2.2420  nonpolar
+   127   THR      O   7.9518  polar
+   128   ILE      N  -1.3870  polar
+   128   ILE     CA   0.1534  nonpolar
+   128   ILE     CB   2.9251  nonpolar
+   128   ILE    CG1  23.3417  nonpolar
+   128   ILE    CG2  -2.5744  nonpolar
+   128   ILE    CD1  24.7584  nonpolar
+   128   ILE      C  -1.8651  nonpolar
+   128   ILE      O   7.4084  polar
+   129   THR      N  -4.2468  polar
+   129   THR     CA -10.2915  nonpolar
+   129   THR     CB -18.6638  nonpolar
+   129   THR    OG1   7.3099  polar
+   129   THR    CG2  29.1770  nonpolar
+   130   GLU      N  -5.4268  polar
+   130   GLU     CA  -0.3556  nonpolar
+   130   GLU     CB -12.3881  nonpolar
+   130   GLU     CG  -6.7965  nonpolar
+   130   GLU     CD  -3.0534  nonpolar
+   130   GLU    OE1 -13.5937  polar
+   130   GLU    OE2   6.7970  polar
+   130   GLU      C  -1.1012  nonpolar
+   130   GLU      O  -1.3616  polar
+   131   ASP      N  -0.2040  polar
+   131   ASP     CA  -3.0588  nonpolar
+   131   ASP     CB  -3.2392  nonpolar
+   131   ASP     CG   0.9272  nonpolar
+   131   ASP    OD1  16.2455  polar
+   131   ASP    OD2 -11.1896  polar
+   131   ASP      C   0.5766  nonpolar
+   131   ASP      O   7.1206  polar
+   132   ASP      N  -0.1696  polar
+   132   ASP     CA   2.1891  nonpolar
+   132   ASP     CB   7.8601  nonpolar
+   132   ASP     CG   4.1505  nonpolar
+   132   ASP    OD1  11.7892  polar
+   132   ASP    OD2   7.4338  polar
+   132   ASP      C   1.0011  nonpolar
+   132   ASP      O   2.1821  polar
+   133   ILE     CA   0.2631  nonpolar
+   133   ILE     CB  -0.8577  nonpolar
+   133   ILE    CG1   3.3971  nonpolar
+   133   ILE    CG2  -2.7092  nonpolar
+   133   ILE    CD1  -4.6899  nonpolar
+   134   GLU      N  -0.1181  polar
+   134   GLU     CB  -5.1551  nonpolar
+   134   GLU     CG -30.5830  nonpolar
+   134   GLU     CD   0.8502  nonpolar
+   134   GLU    OE1   2.1325  polar
+   134   GLU    OE2   0.5375  polar
+   134   GLU      C   0.9720  nonpolar
+   134   GLU      O   0.4305  polar
+   135   GLU      N  -0.0850  polar
+   135   GLU     CA  -0.9366  nonpolar
+   135   GLU     CB   9.1003  nonpolar
+   135   GLU     CG   2.7247  nonpolar
+   135   GLU     CD  -3.1382  nonpolar
+   135   GLU    OE1   9.0031  polar
+   135   GLU    OE2   6.8349  polar
+   135   GLU      C   0.2446  nonpolar
+   135   GLU      O  -1.0075  polar
+   136   LEU     CA  -0.0148  nonpolar
+   136   LEU     CG   4.6820  nonpolar
+   136   LEU    CD1   4.5215  nonpolar
+   136   LEU    CD2   0.4411  nonpolar
+   136   LEU      O  -0.6385  polar
+   137   MET     CA  -0.1992  nonpolar
+   137   MET     CB  -1.5895  nonpolar
+   137   MET     CG   9.4297  nonpolar
+   137   MET     SD -14.9093  nonpolar
+   137   MET     CE  -7.2734  nonpolar
+   138   LYS      N  -0.3913  polar
+   138   LYS     CA  -3.5803  nonpolar
+   138   LYS     CB -25.8716  nonpolar
+   138   LYS     CG  14.8674  nonpolar
+   138   LYS     CD   2.2646  nonpolar
+   138   LYS     CE  20.9059  nonpolar
+   138   LYS     NZ  15.9122  polar
+   138   LYS      O -12.2410  polar
+   139   ASP     CA   4.8647  nonpolar
+   139   ASP     CB  11.2798  nonpolar
+   139   ASP     CG  -0.5376  nonpolar
+   139   ASP    OD1  11.9936  polar
+   139   ASP    OD2 -22.2574  polar
+   139   ASP      O   4.3926  polar
+   140   GLY     CA  -0.1294  nonpolar
+   140   GLY      C   0.8145  nonpolar
+   140   GLY      O   0.5068  polar
+   141   ASP     CB  -5.0102  nonpolar
+   141   ASP    OD2  -5.5269  polar
+   141   ASP      C   0.0505  nonpolar
+   141   ASP      O  -3.5968  polar
+   142   LYS      N   0.2734  polar
+   142   LYS     CA   2.8103  nonpolar
+   142   LYS     CB  -6.5954  nonpolar
+   142   LYS     CG  -4.6801  nonpolar
+   142   LYS     CD -25.2880  nonpolar
+   142   LYS     CE -12.2472  nonpolar
+   142   LYS     NZ  -2.6235  polar
+   142   LYS      C  -0.9058  nonpolar
+   142   LYS      O   6.7495  polar
+   143   ASN     CA   3.5780  nonpolar
+   143   ASN     CB  -2.8305  nonpolar
+   143   ASN     CG  -1.8554  nonpolar
+   143   ASN    OD1 -16.8859  polar
+   143   ASN    ND2  28.9328  polar
+   143   ASN      C   1.0714  nonpolar
+   143   ASN      O   9.2638  polar
+   144   ASN     CA  -1.1093  nonpolar
+   144   ASN     CB -11.5759  nonpolar
+   144   ASN     CG   0.9918  nonpolar
+   144   ASN    OD1 -15.5237  polar
+   144   ASN    ND2 -13.4970  polar
+   144   ASN      C   0.3012  nonpolar
+   144   ASN      O   3.8181  polar
+   145   ASP     CA   7.9342  nonpolar
+   145   ASP     CB  19.5642  nonpolar
+   145   ASP     CG  -5.2636  nonpolar
+   145   ASP    OD1  -9.9388  polar
+   145   ASP    OD2  -8.4397  polar
+   145   ASP      C   0.8694  nonpolar
+   145   ASP      O   9.7297  polar
+   146   GLY      N   0.7990  polar
+   146   GLY     CA   4.7135  nonpolar
+   146   GLY      C   0.5780  nonpolar
+   146   GLY      O -16.8807  polar
+   147   ARG     CB  -1.8253  nonpolar
+   147   ARG     CG   6.2546  nonpolar
+   147   ARG     CD   0.7678  nonpolar
+   147   ARG     NE   6.7699  polar
+   147   ARG     CZ   1.8515  nonpolar
+   147   ARG    NH1   9.7128  polar
+   147   ARG    NH2  13.5011  polar
+   147   ARG      O   0.1770  polar
+   148   ILE    CG2   1.6680  nonpolar
+   148   ILE    CD1   0.1244  nonpolar
+   149   ASP     CB  -0.4338  nonpolar
+   149   ASP     CG   5.5585  nonpolar
+   149   ASP    OD1 -16.0648  polar
+   149   ASP    OD2   0.5481  polar
+   150   TYR      N  -2.2143  polar
+   150   TYR     CB  -7.7772  nonpolar
+   150   TYR     CG  -0.4691  nonpolar
+   150   TYR    CD1  -5.0955  nonpolar
+   150   TYR    CD2  -0.1150  nonpolar
+   150   TYR    CE1  -2.3676  nonpolar
+   150   TYR    CE2  17.7597  nonpolar
+   150   TYR     CZ  -2.8653  nonpolar
+   150   TYR     OH  13.0363  polar
+   150   TYR      O   0.0183  polar
+   151   ASP      N  -1.9220  polar
+   151   ASP     CA   4.1779  nonpolar
+   151   ASP     CB   0.8168  nonpolar
+   151   ASP     CG  -2.3306  nonpolar
+   151   ASP    OD1  -9.5859  polar
+   151   ASP    OD2  -7.4483  polar
+   151   ASP      C   0.6263  nonpolar
+   151   ASP      O   0.7296  polar
+   152   GLU     CA  -6.3878  nonpolar
+   152   GLU     CB  -0.7653  nonpolar
+   152   GLU     CG   1.3217  nonpolar
+   152   GLU     CD   0.5747  nonpolar
+   152   GLU    OE1  -4.3810  polar
+   152   GLU    OE2   8.9020  polar
+   152   GLU      O  -2.3650  polar
+   153   PHE    CD2   2.4124  nonpolar
+   153   PHE    CE2   1.3665  nonpolar
+   154   LEU     CB   3.7755  nonpolar
+   154   LEU     CG  15.3172  nonpolar
+   154   LEU    CD1 -19.1509  nonpolar
+   154   LEU    CD2   1.3622  nonpolar
+   155   GLU      N  -1.0877  polar
+   155   GLU     CA   0.2104  nonpolar
+   155   GLU     CB -10.0781  nonpolar
+   155   GLU     CG -18.2048  nonpolar
+   155   GLU     CD  -1.6537  nonpolar
+   155   GLU    OE1  15.2709  polar
+   155   GLU    OE2 -22.2066  polar
+   155   GLU      C   0.0559  nonpolar
+   155   GLU      O  -5.9922  polar
+   156   PHE      N   0.1131  polar
+   156   PHE     CA  -7.9587  nonpolar
+   156   PHE     CB  -2.4295  nonpolar
+   156   PHE     CG  -0.4300  nonpolar
+   156   PHE    CD1  -5.8128  nonpolar
+   156   PHE    CD2  -1.2951  nonpolar
+   156   PHE    CE1  -8.3317  nonpolar
+   156   PHE    CE2 -20.3408  nonpolar
+   156   PHE     CZ -17.3318  nonpolar
+   156   PHE      O  -7.2422  polar
+   157   MET     CA   0.2273  nonpolar
+   157   MET     CG  15.0446  nonpolar
+   157   MET     SD  35.5819  nonpolar
+   157   MET     CE   9.3622  nonpolar
+   157   MET      C   0.5197  nonpolar
+   157   MET      O  19.5531  polar
+   158   LYS     CA   8.3229  nonpolar
+   158   LYS     CB -15.3423  nonpolar
+   158   LYS     CG  19.2497  nonpolar
+   158   LYS     CD   0.0816  nonpolar
+   158   LYS     CE  25.7227  nonpolar
+   158   LYS     NZ -23.6975  polar
+   158   LYS      C  -2.1685  nonpolar
+   158   LYS      O  12.4265  polar
+   159   GLY      N   0.5108  polar
+   159   GLY     CA  29.2406  nonpolar
+   159   GLY      C   4.7630  nonpolar
+   159   GLY      O  -0.1253  polar
+   160   VAL      N   6.2491  polar
+   160   VAL     CA   2.3968  nonpolar
+   160   VAL    CG1 -43.7420  nonpolar
+   160   VAL    CG2  -6.0521  nonpolar
+   160   VAL      C   2.1306  nonpolar
+   160   VAL      O  18.5582  polar
+   161   GLU      N  -1.8322  polar
+   161   GLU     CA  -1.4110  nonpolar
+   161   GLU     CB  -1.7951  nonpolar
+   161   GLU     CG  14.9174  nonpolar
+   161   GLU     CD   2.2132  nonpolar
+   161   GLU    OE1 -35.6469  polar
+   161   GLU    OE2  -4.4974  polar
+   161   GLU      C   3.9681  nonpolar
+   161   GLU      O  35.6661  polar
+   161   GLU    OXT  13.3476  polar
+
+ Section 2b: Individual Atom Differences in ASA(enzyme)
+ *******************************************************
+
+ ResId  Name   Atom     DASA  Definition 
+                         Å2                 
+     1   EMD     S1  35.6035  nonpolar
+     1   EMD     C2   4.5291  nonpolar
+     1   EMD     O2  59.5287  polar
+     1   EMD     N3  27.5615  polar
+     1   EMD     N4  20.4819  nonpolar
+     1   EMD     C5   0.9391  nonpolar
+     1   EMD     C6   8.4208  nonpolar
+     1   EMD     C7  54.0487  nonpolar
+     1   EMD     C8   1.8259  nonpolar
+     1   EMD     C9  19.7497  nonpolar
+     1   EMD    C10   4.3534  nonpolar
+     1   EMD    C11   2.5611  nonpolar
+     1   EMD    C12  14.9812  nonpolar
+     1   EMD    C13  24.6953  nonpolar
+     1   EMD    N14   2.4289  nonpolar
+     1   EMD    C15   8.2686  nonpolar
+     1   EMD    C16  33.3562  nonpolar
+     1   EMD    C17  29.9710  nonpolar
+     1   EMD    C18   3.4451  nonpolar
+     1   EMD    O18  35.3279  nonpolar
+     1   EMD    C19   2.0528  nonpolar
+     1   EMD    C20   9.8701  nonpolar
+     1   EMD    C21  -0.6302  nonpolar
+     1   EMD    O21   3.8237  nonpolar
+     1   EMD    C22  -1.4019  nonpolar
+     1   EMD    O22   2.7566  nonpolar
+     1   EMD    C23   6.3276  nonpolar
+     1   EMD    C24   2.3143  nonpolar
+     1   EMD    C25  36.6584  nonpolar
+     1   EMD    C26  -4.2430  nonpolar
+
+ Section 3a: Amino Acid Differences in ASA(ligand)
+ **************************************************
+
+ ResId  Name        DASA Polar      DASA Nonpolar
+                        Å2              Å2
+    91   GLY        -11.4004             0.5188
+    92   LYS         24.0100            50.2157
+    93   SER         -1.9798            12.2238
+    94   GLU          0.6578            27.7936
+    95   GLU         -5.5270            -9.7451
+    96   GLU         12.9767           -22.6921
+    97   LEU          0.0000            25.7327
+    98   SER        -23.0299            -7.9038
+    99   ASP        -11.6126            -4.8182
+   100   LEU         -0.2015            41.7886
+   101   PHE          0.0000            -6.5628
+   102   ARG         22.6779            14.2895
+   103   MET         18.3526            22.0721
+   104   PHE         -0.4834            34.5957
+   105   ASP          7.1680             1.2199
+   106   LYS         14.1662           -30.7429
+   107   ASN        -12.7388             1.3695
+   108   ALA          4.1964           -15.2914
+   109   ASP         -2.2938            -8.4230
+   110   GLY          3.9307             3.9709
+   111   TYR         -2.8621             6.4681
+   112   ILE          0.0000             8.8247
+   113   ASP          2.7903            -0.8768
+   114   LEU          1.7053            -4.4920
+   115   GLU          4.9076             9.8824
+   116   GLU         -2.1603             2.1295
+   117   LEU          0.0000             2.8944
+   118   LYS        -19.0984            -7.6247
+   119   ILE         -1.4539            -9.0035
+   120   MET         -0.9094           -23.8875
+   121   LEU          0.0000            53.2217
+   122   GLN          5.9909           -11.3958
+   123   ALA          2.3249            -7.6816
+   124   THR         16.2891            51.0799
+   125   GLY         -1.4265           -10.2758
+   126   GLU         -6.6062            34.9111
+   127   THR         18.5479            -4.9017
+   128   ILE          6.0214            46.7391
+   129   THR          3.0631             0.2217
+   130   GLU        -13.5851           -23.6948
+   131   ASP         11.9725            -4.7942
+   132   ASP         21.2355            15.2008
+   133   ILE          0.0000            -4.5966
+   134   GLU          2.9824           -33.9159
+   135   GLU         14.7455             7.9948
+   136   LEU         -0.6385             9.6298
+   137   MET          0.0000           -14.5417
+   138   LYS          3.2799             8.5860
+   139   ASP         -5.8712            15.6069
+   140   GLY          0.5068             0.6851
+   141   ASP         -9.1237            -4.9597
+   142   LYS          4.3994           -46.9062
+   143   ASN         21.3107            -0.0365
+   144   ASN        -25.2026           -11.3922
+   145   ASP         -8.6488            23.1042
+   146   GLY        -16.0817             5.2915
+   147   ARG         30.1608             7.0486
+   148   ILE          0.0000             1.7924
+   149   ASP        -15.5167             5.1247
+   150   TYR         10.8403            -0.9300
+   151   ASP        -18.2266             3.2904
+   152   GLU          2.1560            -5.2567
+   153   PHE          0.0000             3.7789
+   154   LEU          0.0000             1.3040
+   155   GLU        -14.0156           -29.6703
+   156   PHE         -7.1291           -63.9304
+   157   MET         19.5531            60.7357
+   158   LYS        -11.2710            35.8661
+   159   GLY          0.3855            34.0036
+   160   VAL         24.8073           -45.2667
+   161   GLU          7.0372            17.8926
+
+ Section 3b: Amino Acid Differences in ASA(enzyme)
+ **************************************************
+
+ ResId  Name        DASA Polar      DASA Nonpolar
+                        Å2              Å2
+     1   EMD         87.0902           362.5158
+
+ Section 4a: Calculating DSconf (ligand)
+ ***************************************  
+
+ ResId  Name   DASATot    DASAsc  DSbu->ex    DSex->u       DSbb       DSconf  
+                 Å2         Å2   cal/mol.K   cal/mol.K   cal/mol.K   cal/mol.K
+    91   GLY  -10.8816    0.0000    0.0000     0.0000      0.0000      0.0000
+    92   LYS   74.2257   79.2484    2.7808     0.0000      0.0000     -2.7808
+    93   SER   10.2440    4.5422    0.2089     0.0000      0.0000     -0.2089
+    94   GLU   28.4514   37.1401    0.9500     0.0000      0.0000     -0.9500
+    95   GLU  -15.2721   13.4007    0.3428     0.0000      0.0000     -0.3428
+    96   GLU   -9.7154   -7.2886   -0.1864     0.0000      0.0000      0.1864
+    97   LEU   25.7327   25.7327    0.3062     0.0000      0.0000     -0.3062
+    98   SER  -30.9337  -25.8094   -1.1872     0.0000      0.0000      1.1872
+    99   ASP  -16.4308  -18.1710   -0.3428     0.0000      0.0000      0.3428
+   100   LEU   41.5871   42.2527    0.5027     0.0000      0.0000     -0.5027
+   101   PHE   -6.5628   -6.9079   -0.0553     0.0000      0.0000      0.0553
+   102   ARG   36.9674   28.6182    1.0381     0.0000      0.0000     -1.0381
+   103   MET   40.4247   19.3734    0.5509     0.0000      0.0000     -0.5509
+   104   PHE   34.1123   32.1859    0.2575     0.0000      0.0000     -0.2575
+   105   ASP    8.3879    4.6328    0.0874     0.0000      0.0000     -0.0874
+   106   LYS  -16.5767   -8.1260   -0.2851     0.0000      0.0000      0.2851
+   107   ASN  -11.3693  -13.2771   -0.3866     0.0000      0.0000      0.3866
+   108   ALA  -11.0950  -10.5675   -0.0000     0.0000      0.0000      0.0000
+   109   ASP  -10.7168    4.3038    0.0812     0.0000      0.0000     -0.0812
+   110   GLY    7.9016    0.0000    0.0000     0.0000      0.0000      0.0000
+   111   TYR    3.6060    7.7697    0.1155     0.0000      0.0000     -0.1155
+   112   ILE    8.8247    8.5045    0.1057     0.0000      0.0000     -0.1057
+   113   ASP    1.9135    1.5182    0.0286     0.0000      0.0000     -0.0286
+   114   LEU   -2.7867   -4.4920   -0.0534     0.0000      0.0000      0.0534
+   115   GLU   14.7900   10.8405    0.2773     0.0000      0.0000     -0.2773
+   116   GLU   -0.0308    0.5092    0.0130     0.0000      0.0000     -0.0130
+   117   LEU    2.8944    2.8062    0.0334     0.0000      0.0000     -0.0334
+   118   LYS  -26.7231  -27.5728   -0.9675     0.0000      0.0000      0.9675
+   119   ILE  -10.4574   -6.4924   -0.0807     0.0000      0.0000      0.0807
+   120   MET  -24.7969  -23.1762   -0.6591     0.0000      0.0000      0.6591
+   121   LEU   53.2217   52.4387    0.6239     0.0000      0.0000     -0.6239
+   122   GLN   -5.4049  -18.0424   -0.6290     0.0000      0.0000      0.6290
+   123   ALA   -5.3567  -11.8565   -0.0000     0.0000      0.0000      0.0000
+   124   THR   67.3690   44.6606    1.4493     0.0000      0.0000     -1.4493
+   125   GLY  -11.7023    0.0000    0.0000     0.0000      0.0000      0.0000
+   126   GLU   28.3049   34.4613    0.8815     0.0000      0.0000     -0.8815
+   127   THR   13.6462   12.5758    0.4081     0.0000      0.0000     -0.4081
+   128   ILE   52.7605   48.4508    0.6022     0.0000      0.0000     -0.6022
+   129   THR    3.2848   17.8231    0.5784     0.0000      0.0000     -0.5784
+   130   GLU  -37.2799  -29.0347   -0.7427     0.0000      0.0000      0.7427
+   131   ASP    7.1783    2.7439    0.0518     0.0000      0.0000     -0.0518
+   132   ASP   36.4363   31.2336    0.5893     0.0000      0.0000     -0.5893
+   133   ILE   -4.5966   -4.8597   -0.0604     0.0000      0.0000      0.0604
+   134   GLU  -30.9335  -32.2179   -0.8241     0.0000      0.0000      0.8241
+   135   GLU   22.7403   24.5248    0.6273     0.0000      0.0000     -0.6273
+   136   LEU    8.9913    9.6446    0.1147     0.0000      0.0000     -0.1147
+   137   MET  -14.5417  -14.3425   -0.4079     0.0000      0.0000      0.4079
+   138   LYS   11.8659   28.0785    0.9853     0.0000      0.0000     -0.9853
+   139   ASP    9.7357    0.4784    0.0090     0.0000      0.0000     -0.0090
+   140   GLY    1.1919    0.0000    0.0000     0.0000      0.0000      0.0000
+   141   ASP  -14.0834  -10.5371   -0.1988     0.0000      0.0000      0.1988
+   142   LYS  -42.5068  -51.4342   -1.8048     0.0000      0.0000      1.8048
+   143   ASN   21.2742    7.3610    0.2143     0.0000      0.0000     -0.2143
+   144   ASN  -36.5948  -39.6048   -1.1531     0.0000      0.0000      1.1531
+   145   ASP   14.4554   -4.0779   -0.0769     0.0000      0.0000      0.0769
+   146   GLY  -10.7902    0.0000    0.0000     0.0000      0.0000      0.0000
+   147   ARG   37.2094   37.0324    1.3434     0.0000      0.0000     -1.3434
+   148   ILE    1.7924    1.7924    0.0223     0.0000      0.0000     -0.0223
+   149   ASP  -10.3920  -10.3920   -0.1961     0.0000      0.0000      0.1961
+   150   TYR    9.9103   12.1063    0.1800     0.0000      0.0000     -0.1800
+   151   ASP  -14.9362  -18.5480   -0.3500     0.0000      0.0000      0.3500
+   152   GLU   -3.1007    5.6521    0.1446     0.0000      0.0000     -0.1446
+   153   PHE    3.7789    3.7789    0.0302     0.0000      0.0000     -0.0302
+   154   LEU    1.3040    1.3040    0.0155     0.0000      0.0000     -0.0155
+   155   GLU  -43.6859  -36.8723   -0.9432     0.0000      0.0000      0.9432
+   156   PHE  -71.0595  -55.9717   -0.4478     0.0000      0.0000      0.4478
+   157   MET   80.2888   59.9887    1.7059     0.0000      0.0000     -1.7059
+   158   LYS   24.5951    6.0142    0.2110     0.0000      0.0000     -0.2110
+   159   GLY   34.3891    0.0000    0.0000     0.0000      0.0000      0.0000
+   160   VAL  -20.4594  -49.7941   -0.0511     0.0000      0.0000      0.0511
+   161   GLU   24.9298  -24.8088   -0.6346     0.0000      0.0000      0.6346
+
+ Section 4b: Calculating DSconf (enzyme)
+ ***************************************  
+
+ ResId  Name   DASATot    DASAsc  DSbu->ex    DSex->u       DSbb       DSconf  
+                 Å2         Å2   cal/mol.K   cal/mol.K   cal/mol.K   cal/mol.K
+     1   EMD  449.6060  449.6060    0.0000     0.0000      0.0000      0.0000
+
+ Section 5a: Calculating Thermodynamic Values per Residue (ligand)
+ *****************************************************************
+
+ ResId  Name    DCpbind     DHbind    TDSsol   TDSconf    TDSbind    DGbind 
+               kcal/mol.K  kcal/mol  kcal/mol  kcal/mol  kcal/mol  kcal/mol
+    91   GLY    -0.0032     0.4743    0.1212    0.0000     0.0881    0.3862
+    92   LYS    -0.0164     0.2423    1.5073   -0.8291     0.6450   -0.4027
+    93   SER    -0.0060     0.3759    0.4379   -0.0623     0.3424    0.0334
+    94   GLU    -0.0123     0.6457    0.9488   -0.2833     0.6324    0.0133
+    95   GLU     0.0029    -0.0119   -0.2846   -0.1022    -0.4200    0.4081
+    96   GLU     0.0136    -1.0745   -0.8972    0.0556    -0.8747   -0.1997
+    97   LEU    -0.0116     0.6225    0.8840   -0.0913     0.7596   -0.1371
+    98   SER    -0.0024     0.7415   -0.0627    0.3540     0.2582    0.4833
+    99   ASP    -0.0009     0.3538   -0.0602    0.1022     0.0089    0.3449
+   100   LEU    -0.0189     1.0190    1.4373   -0.1499     1.2543   -0.2353
+   101   PHE     0.0030    -0.1588   -0.2254    0.0165    -0.2421    0.0833
+   102   ARG    -0.0005    -0.5728    0.2852   -0.3095    -0.0574   -0.5154
+   103   MET    -0.0052    -0.2094    0.5918   -0.1643     0.3944   -0.6038
+   104   PHE    -0.0157     0.8564    1.1928   -0.0768     1.0829   -0.2265
+   105   ASP     0.0013    -0.2608   -0.0231   -0.0261    -0.0823   -0.1785
+   106   LYS     0.0175    -1.3174   -1.1845    0.0850    -1.1326   -0.1848
+   107   ASN    -0.0039     0.5490    0.1626    0.1153     0.2447    0.3044
+   108   ALA     0.0080    -0.5399   -0.5633    0.0000    -0.5965    0.0566
+   109   ASP     0.0032    -0.1109   -0.2685   -0.0242    -0.3259    0.2150
+   110   GLY    -0.0008    -0.0631    0.1008    0.0000     0.0676   -0.1308
+   111   TYR    -0.0037     0.2724    0.2481   -0.0344     0.1806    0.0918
+   112   ILE    -0.0040     0.2135    0.3031   -0.0315     0.2385   -0.0250
+   113   ASP     0.0011    -0.1342   -0.0554   -0.0085    -0.0971   -0.0371
+   114   LEU     0.0025    -0.1777   -0.1698    0.0159    -0.1870    0.0092
+   115   GLU    -0.0032     0.0403    0.2950   -0.0827     0.1792   -0.1389
+   116   GLU    -0.0015     0.1390    0.0927   -0.0039     0.0557    0.0833
+   117   LEU    -0.0013     0.0700    0.0994   -0.0100     0.0563    0.0137
+   118   LYS    -0.0015     0.5890   -0.0887    0.2885     0.1666    0.4224
+   119   ILE     0.0037    -0.1589   -0.2961    0.0241    -0.3052    0.1463
+   120   MET     0.0105    -0.5410   -0.8123    0.1965    -0.6490    0.1079
+   121   LEU    -0.0239     1.2874    1.8283   -0.1860     1.6091   -0.3217
+   122   GLN     0.0067    -0.5183   -0.4458    0.1875    -0.2914   -0.2269
+   123   ALA     0.0041    -0.2800   -0.2850    0.0000    -0.3181    0.0381
+   124   THR    -0.0188     0.5759    1.6070   -0.4321     1.1417   -0.5658
+   125   GLY     0.0043    -0.1908   -0.3401    0.0000    -0.3732    0.1824
+   126   GLU    -0.0174     1.1121    1.2592   -0.2628     0.9632    0.1488
+   127   THR     0.0070    -0.8698   -0.3366   -0.1217    -0.4914   -0.3784
+   128   ILE    -0.0195     0.8868    1.5510   -0.1795     1.3383   -0.4515
+   129   THR     0.0007    -0.1187   -0.0202   -0.1724    -0.2257    0.1070
+   130   GLU     0.0071    -0.0230   -0.6908    0.2214    -0.5025    0.4795
+   131   ASP     0.0053    -0.6009   -0.2733   -0.0154    -0.3218   -0.2790
+   132   ASP    -0.0013    -0.4923    0.3296   -0.1757     0.1208   -0.6131
+   133   ILE     0.0021    -0.1112   -0.1579    0.0180    -0.1730    0.0618
+   134   GLU     0.0160    -0.9412   -1.1921    0.2457    -0.9795    0.0383
+   135   GLU     0.0002    -0.4038    0.1409   -0.1870    -0.0792   -0.3245
+   136   LEU    -0.0045     0.2588    0.3366   -0.0342     0.2693   -0.0104
+   137   MET     0.0065    -0.3518   -0.4995    0.1216    -0.4111    0.0593
+   138   LYS    -0.0030     0.0749    0.2652   -0.2938    -0.0617    0.1365
+   139   ASP    -0.0085     0.6153    0.5894   -0.0027     0.5535    0.0618
+   140   GLY    -0.0002    -0.0040    0.0189    0.0000    -0.0142    0.0102
+   141   ASP    -0.0001     0.2495   -0.0876    0.0593    -0.0615    0.3110
+   142   LYS     0.0223    -1.3128   -1.6512    0.5381    -1.1462   -0.1666
+   143   ASN     0.0056    -0.8640   -0.1945   -0.0639    -0.2915   -0.5724
+   144   ASN    -0.0014     0.7451   -0.1628    0.3438     0.1479    0.5973
+   145   ASP    -0.0126     0.9092    0.8721    0.0229     0.8619    0.0473
+   146   GLY    -0.0066     0.7793    0.3276    0.0000     0.2945    0.4848
+   147   ARG     0.0047    -1.0510   -0.0314   -0.4005    -0.4650   -0.5860
+   148   ILE    -0.0008     0.0434    0.0616   -0.0066     0.0218    0.0216
+   149   ASP    -0.0063     0.7524    0.3168    0.0585     0.3421    0.4103
+   150   TYR     0.0032    -0.4615   -0.1303   -0.0537    -0.2170   -0.2445
+   151   ASP    -0.0062     0.8178    0.2783    0.1043     0.3495    0.4682
+   152   GLU     0.0029    -0.2145   -0.2001   -0.0431    -0.2764    0.0619
+   153   PHE    -0.0017     0.0914    0.1298   -0.0090     0.0877    0.0037
+   154   LEU    -0.0006     0.0315    0.0448   -0.0046     0.0070    0.0245
+   155   GLU     0.0097    -0.1501   -0.8921    0.2812    -0.6440    0.4940
+   156   PHE     0.0269    -1.2577   -2.1315    0.1335    -2.0311    0.7733
+   157   MET    -0.0222     0.6773    1.9091   -0.5086     1.3673   -0.6900
+   158   LYS    -0.0191     1.3241    1.3343   -0.0629     1.2382    0.0859
+   159   GLY    -0.0152     0.8069    1.1646    0.0000     1.1315   -0.3245
+   160   VAL     0.0268    -2.0997   -1.7799    0.0152    -1.7979   -0.3018
+   161   GLU    -0.0062     0.1478    0.5508    0.1892     0.7069   -0.5591
+
+ Section 5b: Calculating Thermodynamic Values per Residue (enzyme)
+ *****************************************************************
+
+ ResId  Name    DCpbind     DHbind    TDSsol   TDSconf    TDSbind    DGbind 
+               kcal/mol.K  kcal/mol  kcal/mol  kcal/mol  kcal/mol  kcal/mol
+     1   EMD    -0.1405     5.2421   11.6633    0.0000    11.6302   -6.3881

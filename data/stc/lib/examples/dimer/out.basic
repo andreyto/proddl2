@@ -1,0 +1,26 @@
+
+Structural Thermodynamic Calculations Basic Results
+Date: Wed Mar 29 15:16:31 2006
+
+Accessible Surface Area (ASA)
+   Species      Polar ASA (Å2)    Nonpolar ASA (Å2)
+   -------      --------------    -----------------
+ Unfolded            2753.56              3230.49
+ Folded              2694.45              3008.49
+
+Change in Accessible Surface Area (ASA)
+   Total Polar...:        59.11
+   Total NonPolar:       221.99
+
+Thermodynamic Values
+   DCpfold      -0.084528  kcal/mol.K
+   DHfold        2.975957  kcal/mol
+   DSfold       -0.003414  kcal/mol.K
+    DSsol        0.023779  kcal/mol.K
+    DSrt         0.000000  kcal/mol.K
+    DSconf      -0.027194  kcal/mol.K
+     DSbu->ex    0.001754  kcal/mol.K
+     DSex->u     0.004340  kcal/mol.K
+     DSbb        0.021100  kcal/mol.K
+   -TDSfold      1.017972  kcal/mol
+   DGfold        3.993929  kcal/mol

@@ -1,0 +1,92 @@
+Running pdbtodia...
+
+.enzyme .enzyme.dia .enzyme.radii /polaris/rbo/proj/stc/bin/pdbtodia
+
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+
+Amino acid sequence: 
+ILE SER ALA ASP ALA MET MET GLN ALA LEU LEU GLY ALA ARG ALA LYS 
+  Number of amino acids: 16
+
+Running addradii...
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-dig nums separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ give exceptional residue info: res, atom, rad 
+      then blank line to finish:
+
+ Exceptional radii
+
+ Residue  atom  radius
+
+
+
+ Standard atom types:
+
+               B    C    N    O    S    P    M    I
+
+ Radius(A)    1.9  1.9  1.7  1.4  1.8  1.8  1.7  2.0
+
+ Title from input coordinate file:                                                                                 
+
+
+     113 atoms output
+
+
+
+Running edpdb...
+
+
+**************************************************
+
+ Program.: edpdb - Version 2.0 (c)
+ Purpose.: edit specific pdb atoms 
+
+ Author..: Robert Boyko
+ Location: University of Alberta
+           Department of Biochemistry
+
+ Funding for this project was provided by the
+ Protein Engineering Network Centres of Excellence
+ and the Medical Research Council of Canada.
+
+**************************************************
+
+
+ Enter input pdb file.
+
+>> 
+ Enter output file.
+
+>> 
+ Enter amino definitions file.
+
+>> 
+Unrecognized atom name:     112 OT1 LYS    17     21.77200  64.55000  -7.13200      1.4000
+
+
+Unrecognized atom name:     113 OT2 LYS    17     20.05400  63.63600  -6.20900      1.4000
+
+Number of atoms processed: 111
+
+Done
+
+Running access...
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in:  111
+
+Done

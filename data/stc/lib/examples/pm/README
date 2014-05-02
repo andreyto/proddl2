@@ -1,0 +1,33 @@
+
+Pascal mercier STC run
+This example demonstrates the use of a custom built sconf file for the enzyme
+and some errors.
+
+1) Click on "calc ASA" button.
+
+2) Press "calculate" button.
+    Done calculations, display results, log file has some errors.
+
+3) Click 'Display results' and view log file to see these errors:
+
+	*** Error, Unrecognized residue name:     850 CA   CA   160     14.26200 15.32000  31.72200      1.9000
+	*** Error, Unrecognized atom name:     851 CA   CA   161     18.80500 7.03500  24.55600      1.9000
+
+	Let's say we choose to ignore these errors for now.
+    Click "Dismiss".
+
+4) Click "Thermodynamics" button.
+
+5) Press "Calculate". This time thermo complains about the calcium atoms
+in the pdb file. Quit stc and go to pm.complex.pdb and remove the 
+offending atoms (bottom of the file). You can also comment them out by
+using the "#" function at the start of each line.
+
+6) Re-start STC and re-do the calc-asa calculations.
+
+7) Click the "Thermodynamics" button.
+
+8) This time we press both "calculate from datafile" radio buttons.
+This allows us to use the values found in the file pm.enzyme.sconf.
+
+9) Press "Calculate". Click "Dismiss" when you are done viewing results.

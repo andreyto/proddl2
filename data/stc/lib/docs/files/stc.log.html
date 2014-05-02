@@ -1,0 +1,209 @@
+<PRE>
+Installation directory for stc-v5.3.0 is: '../..'
+Date: 'Thu Mar 30 16:20:16 MST 2006'
+
+Output files are found in the directory: '/Users/rbo/proj/stc/test/basic'
+
+***********************************************************
+Reformatting jrb.complex.pdb pdb file using fix_pdb...
+ Change any 'END' to 'TER' statements...
+ Change any 'OT1' atoms to 'O  ', 'OT2' atoms to 'OXT'...
+ Keep only ATOM, HETATM and TER lines...
+ Remove any TIP or BME amino acid names...
+ Convert any 4 letter amino acids to 3 letter...
+ Looking for number of TER statements...
+ Separate components...
+ Component 1 represented by 145 lines in the complex file.
+ Component 2 represented by 4566 lines in the complex file.
+Done fix_pdb. Reformatted pdb file saved in '/Users/rbo/proj/stc/test/basic/.tmp.complex.pdb'.
+
+
+***********************************************************
+Reformatting jrb.free.pdb pdb file using fix_pdb...
+ Change any 'END' to 'TER' statements...
+ Change any 'OT1' atoms to 'O  ', 'OT2' atoms to 'OXT'...
+ Keep only ATOM, HETATM and TER lines...
+ Remove any TIP or BME amino acid names...
+ Convert any 4 letter amino acids to 3 letter...
+Done fix_pdb. Reformatted pdb file saved in '/Users/rbo/proj/stc/test/basic/.tmp.ligand.pdb'.
+
+
+***********************************************************
+* Calculating accessible surface area for '/Users/rbo/proj/stc/test/basic/.tmp.complex.pdb'
+***********************************************************
+
+***********************************************************
+Running pdbtodia - format /Users/rbo/proj/stc/test/basic/.tmp.complex.pdb into diamond format for addradii.
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+ Amino acid sequence: 
+ ALA LEU MAS ARG ADD GLU MDH LEU ASN LEU ASP SER ILE ILE GLY ARG LEU LEU GLU VAL GLN GLY SER ALA ALA GLY LYS ASN VAL GLN LEU THR GLU ASN GLU ILE ARG GLY LEU CYS LEU ALA SER ARG GLU ILE PHE LEU SER GLN PRO ILE LEU LEU ALA LEU GLU ALA PRO LEU LYS ILE CYS GLY ASP ILE HIS GLY GLN TYR TYR ASP LEU LEU ARG LEU PHE GLU TYR GLY GLY PHE PRO PRO GLU SER ASN TYR LEU PHE LEU GLY ASP TYR VAL ASP ARG GLY LYS GLN SER LEU GLU THR ILE CYS LEU LEU LEU ALA TYR LYS ILE LYS TYR PRO GLU ASN PHE PHE LEU LEU ARG GLY ASN HIS GLU CYS ALA SER ILE ASN ARG ILE TYR GLY PHE TYR ASP GLU CYS LYS ARG ARG TYR ASN ILE LYS LEU TRP LYS THR PHE THR ASP CYS PHE ASN CYS LEU PRO ILE ALA ALA ILE VAL ASP GLU LYS ILE PHE CYS CYS HIS GLY GLY LEU SER PRO ASP LEU ALA SER MET GLU GLN ILE ARG ARG ILE ALA ARG PRO THR ASP VAL PRO ASP ALA GLY LEU LEU CYS ASP LEU LEU TRP SER ASP PRO ASP ALA ASP ALA ALA GLY TRP GLY ALA ASN ASP ARG GLY VAL SER PHE THR PHE GLY ALA ALA VAL VAL ALA SER PHE LEU ALA LYS HIS ASP LEU ASP LEU ILE CYS ARG ALA HIS GLN VAL VAL GLU ASP GLY TYR GLU PHE PHE ALA ALA ARG GLN LEU VAL THR LEU PHE SER ALA PRO ASN TYR CYS GLY GLU PHE ASP ASN ALA GLY ALA MET MET SER VAL ASP GLU THR LEU MET CYS SER PHE GLN ILE LEU LYS PRO ALA ALA
+ Number of amino acids: 301
+Done pdbtodia. Re-formatted output in /Users/rbo/proj/stc/test/basic/complex.dia
+
+***********************************************************
+Running addradii on /Users/rbo/proj/stc/test/basic/complex.dia
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-digit numbers
+  separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ Give exceptional residue info: res, atom, rad 
+ Then blank line to finish:
+ Exceptional radii
+ Residue  atom  radius
+ Standard atom types:
+
+               C    N    O    S    P    M    I     
+
+ Radius(A)    1.9  1.7  1.4  1.8  1.8  1.7  2.0  0.0
+
+ Title from input coordinate file:                                                                                 
+    2375 atoms output
+
+***********************************************************
+Running edpdb on /Users/rbo/proj/stc/test/basic/complex.addradii - fixes addradii output by
+reading in the data from specified residue library
+ Enter input pdb file.
+ Enter output file.
+ Please enter the amino acid definition file
+ Amino def file: ../../lib/amino.def Residues: 33
+ Number of atoms processed: 2375
+
+***********************************************************
+Running access on /Users/rbo/proj/stc/test/basic/complex.edpdb
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in: 2375
+Done
+
+***********************************************************
+* Calculating accessible surface area for '/Users/rbo/proj/stc/test/basic/.tmp.ligand.pdb'
+***********************************************************
+
+***********************************************************
+Running pdbtodia - format /Users/rbo/proj/stc/test/basic/.tmp.ligand.pdb into diamond format for addradii.
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+ Amino acid sequence: 
+ ALA LEU MAS ARG ADD GLU MDH
+ Number of amino acids: 7
+Done pdbtodia. Re-formatted output in /Users/rbo/proj/stc/test/basic/ligand.dia
+
+***********************************************************
+Running addradii on /Users/rbo/proj/stc/test/basic/ligand.dia
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-digit numbers
+  separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ Give exceptional residue info: res, atom, rad 
+ Then blank line to finish:
+ Exceptional radii
+ Residue  atom  radius
+ Standard atom types:
+
+               C    N    O    S    P    M    I     
+
+ Radius(A)    1.9  1.7  1.4  1.8  1.8  1.7  2.0  0.0
+
+ Title from input coordinate file:                                                                                 
+      71 atoms output
+
+***********************************************************
+Running edpdb on /Users/rbo/proj/stc/test/basic/ligand.addradii - fixes addradii output by
+reading in the data from specified residue library
+ Enter input pdb file.
+ Enter output file.
+ Please enter the amino acid definition file
+ Amino def file: ../../lib/amino.def Residues: 33
+ Number of atoms processed: 71
+
+***********************************************************
+Running access on /Users/rbo/proj/stc/test/basic/ligand.edpdb
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in:   71
+Done
+
+***********************************************************
+* Calculating accessible surface area for '/Users/rbo/proj/stc/test/basic/.tmp.enzyme.pdb'
+***********************************************************
+
+***********************************************************
+Running pdbtodia - format /Users/rbo/proj/stc/test/basic/.tmp.enzyme.pdb into diamond format for addradii.
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+ Amino acid sequence: 
+ LEU ASN LEU ASP SER ILE ILE GLY ARG LEU LEU GLU VAL GLN GLY SER ALA ALA GLY LYS ASN VAL GLN LEU THR GLU ASN GLU ILE ARG GLY LEU CYS LEU ALA SER ARG GLU ILE PHE LEU SER GLN PRO ILE LEU LEU ALA LEU GLU ALA PRO LEU LYS ILE CYS GLY ASP ILE HIS GLY GLN TYR TYR ASP LEU LEU ARG LEU PHE GLU TYR GLY GLY PHE PRO PRO GLU SER ASN TYR LEU PHE LEU GLY ASP TYR VAL ASP ARG GLY LYS GLN SER LEU GLU THR ILE CYS LEU LEU LEU ALA TYR LYS ILE LYS TYR PRO GLU ASN PHE PHE LEU LEU ARG GLY ASN HIS GLU CYS ALA SER ILE ASN ARG ILE TYR GLY PHE TYR ASP GLU CYS LYS ARG ARG TYR ASN ILE LYS LEU TRP LYS THR PHE THR ASP CYS PHE ASN CYS LEU PRO ILE ALA ALA ILE VAL ASP GLU LYS ILE PHE CYS CYS HIS GLY GLY LEU SER PRO ASP LEU ALA SER MET GLU GLN ILE ARG ARG ILE ALA ARG PRO THR ASP VAL PRO ASP ALA GLY LEU LEU CYS ASP LEU LEU TRP SER ASP PRO ASP ALA ASP ALA ALA GLY TRP GLY ALA ASN ASP ARG GLY VAL SER PHE THR PHE GLY ALA ALA VAL VAL ALA SER PHE LEU ALA LYS HIS ASP LEU ASP LEU ILE CYS ARG ALA HIS GLN VAL VAL GLU ASP GLY TYR GLU PHE PHE ALA ALA ARG GLN LEU VAL THR LEU PHE SER ALA PRO ASN TYR CYS GLY GLU PHE ASP ASN ALA GLY ALA MET MET SER VAL ASP GLU THR LEU MET CYS SER PHE GLN ILE LEU LYS PRO ALA ALA
+ Number of amino acids: 294
+Done pdbtodia. Re-formatted output in /Users/rbo/proj/stc/test/basic/enzyme.dia
+
+***********************************************************
+Running addradii on /Users/rbo/proj/stc/test/basic/enzyme.dia
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-digit numbers
+  separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ Give exceptional residue info: res, atom, rad 
+ Then blank line to finish:
+ Exceptional radii
+ Residue  atom  radius
+ Standard atom types:
+
+               C    N    O    S    P    M    I     
+
+ Radius(A)    1.9  1.7  1.4  1.8  1.8  1.7  2.0  0.0
+
+ Title from input coordinate file:                                                                                 
+    2304 atoms output
+
+***********************************************************
+Running edpdb on /Users/rbo/proj/stc/test/basic/enzyme.addradii - fixes addradii output by
+reading in the data from specified residue library
+ Enter input pdb file.
+ Enter output file.
+ Please enter the amino acid definition file
+ Amino def file: ../../lib/amino.def Residues: 33
+ Number of atoms processed: 2304
+
+***********************************************************
+Running access on /Users/rbo/proj/stc/test/basic/enzyme.edpdb
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in: 2304
+Done

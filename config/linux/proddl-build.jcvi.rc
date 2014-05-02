@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export PRODDL_BUILD_TOP=${HOME}/work/proddl
+export PRODDL_DEPS=$PRODDL_BUILD_TOP/deps
+export PRODDL_DEPS_BUILD=$PRODDL_BUILD_TOP/deps_build
+export PRODDL_DEPS_SRC=$PRODDL_BUILD_TOP/deps_src
+
+export PRODDL_SRC=$PRODDL_BUILD_TOP/proddl2
+
+export IMP_HOME=$PRODDL_DEPS/IMP
+
+export PRODDL_HOME=$PRODDL_BUILD_TOP/proddl2_inst
+
+export PATH=$PRODDL_DEPS/bin:$PATH
+
+export PYTHONPATH=$PYTHONPATH:$IMP_HOME/python:$IMP_HOME/bin
+

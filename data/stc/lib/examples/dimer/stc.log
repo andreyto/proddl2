@@ -1,0 +1,145 @@
+
+Installation directory for stc-v5.3.0 is: '../..'
+Date: 'Wed Mar 29 15:16:07 MST 2006'
+
+Output files are found in the directory: '/Users/rbo/proj/stc/test/dimer'
+
+***********************************************************
+Reformatting dimer.pdb pdb file using fix_pdb...
+ Change any 'END' to 'TER' statements...
+ Change any 'OT1' atoms to 'O  ', 'OT2' atoms to 'OXT'...
+ Keep only ATOM, HETATM and TER lines...
+ Remove any TIP or BME amino acid names...
+ Convert any 4 letter amino acids to 3 letter...
+Done fix_pdb. Reformatted pdb file saved in '/Users/rbo/proj/stc/test/dimer/.tmp.folded.pdb'.
+
+
+***********************************************************
+Reformatting dimerpart.pdb pdb file using fix_pdb...
+ Change any 'END' to 'TER' statements...
+ Change any 'OT1' atoms to 'O  ', 'OT2' atoms to 'OXT'...
+ Keep only ATOM, HETATM and TER lines...
+ Remove any TIP or BME amino acid names...
+ Convert any 4 letter amino acids to 3 letter...
+Done fix_pdb. Reformatted pdb file saved in '/Users/rbo/proj/stc/test/dimer/.tmp.unfolded.pdb'.
+
+
+***********************************************************
+* Calculating accessible surface area for '/Users/rbo/proj/stc/test/dimer/.tmp.folded.pdb'
+***********************************************************
+
+***********************************************************
+Running pdbtodia - format /Users/rbo/proj/stc/test/dimer/.tmp.folded.pdb into diamond format for addradii.
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+ Amino acid sequence: 
+ GLU LEU ARG CYS GLN CYS ILE LYS THR TYR SER LYS PRO PHE HIS PRO LYS PHE ILE LYS GLU LEU ARG VAL ILE GLU SER GLY PRO HIS CYS ALA ASN THR GLU ILE ILE VAL LYS LEU SER ASP GLY ARG GLU LEU CYS LEU ASP PRO LYS GLU ASN TRP VAL GLN ARG VAL VAL GLU LYS PHE LEU LYS ARG ALA GLU ASN SER
+ Number of amino acids: 69
+Done pdbtodia. Re-formatted output in /Users/rbo/proj/stc/test/dimer/folded.dia
+
+***********************************************************
+Running addradii on /Users/rbo/proj/stc/test/dimer/folded.dia
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-digit numbers
+  separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ Give exceptional residue info: res, atom, rad 
+ Then blank line to finish:
+ Exceptional radii
+ Residue  atom  radius
+ Standard atom types:
+
+               C    N    O    S    P    M    I     
+
+ Radius(A)    1.9  1.7  1.4  1.8  1.8  1.7  2.0  0.0
+
+ Title from input coordinate file:                                                                                 
+     567 atoms output
+
+***********************************************************
+Running edpdb on /Users/rbo/proj/stc/test/dimer/folded.addradii - fixes addradii output by
+reading in the data from specified residue library
+ Enter input pdb file.
+ Enter output file.
+ Please enter the amino acid definition file
+ Amino def file: ../../lib/amino.def Residues: 33
+ Number of atoms processed: 567
+
+***********************************************************
+Running access on /Users/rbo/proj/stc/test/dimer/folded.edpdb
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in:  567
+Done
+
+***********************************************************
+* Calculating accessible surface area for '/Users/rbo/proj/stc/test/dimer/.tmp.unfolded.pdb'
+***********************************************************
+
+***********************************************************
+Running pdbtodia - format /Users/rbo/proj/stc/test/dimer/.tmp.unfolded.pdb into diamond format for addradii.
+ INPUT FILE NAME? 
+ OUTPUT FILE NAME? 
+ OUTPUT SEQUENCE FILE NAME? 
+ Amino acid sequence: 
+ GLU LEU ARG CYS GLN CYS ILE LYS THR TYR SER LYS PRO PHE HIS PRO LYS PHE ILE LYS GLU LEU ARG VAL ILE GLU SER GLY PRO HIS CYS ALA ASN THR GLU ILE ILE VAL LYS LEU SER ASP GLY ARG GLU LEU CYS LEU ASP PRO LYS GLU ASN TRP VAL GLN ARG VAL VAL GLU LYS PHE LEU LYS ARG ALA GLU ASN SER
+ Number of amino acids: 69
+Done pdbtodia. Re-formatted output in /Users/rbo/proj/stc/test/dimer/unfolded.dia
+
+***********************************************************
+Running addradii on /Users/rbo/proj/stc/test/dimer/unfolded.dia
+  Please Enter Input File Name: 
+  Please Enter Output File Name: 
+  Give residue regions as 5-digit numbers
+  separated by space
+       Then a blank line to finish: 
+       eg.   00001 00005   <LF>
+             00008 00010  <LF><LF>
+
+ Residue number regions and identifier:
+
+                1 10000  
+
+ Give exceptional residue info: res, atom, rad 
+ Then blank line to finish:
+ Exceptional radii
+ Residue  atom  radius
+ Standard atom types:
+
+               C    N    O    S    P    M    I     
+
+ Radius(A)    1.9  1.7  1.4  1.8  1.8  1.7  2.0  0.0
+
+ Title from input coordinate file:                                                                                 
+     567 atoms output
+
+***********************************************************
+Running edpdb on /Users/rbo/proj/stc/test/dimer/unfolded.addradii - fixes addradii output by
+reading in the data from specified residue library
+ Enter input pdb file.
+ Enter output file.
+ Please enter the amino acid definition file
+ Amino def file: ../../lib/amino.def Residues: 33
+ Number of atoms processed: 567
+
+***********************************************************
+Running access on /Users/rbo/proj/stc/test/dimer/unfolded.edpdb
+ >> MINIMUM DIMENSION OF ARRAY A =  6128000
+ >> Please Enter Input File Name: 
+ >> Please Enter Output File Name: 
+ >> Enter frac. error for atom, probe radius, and iacc
+ >> Example:  .05 1.4 0
+ >> Number of atoms read in:  567
+Done

@@ -1,0 +1,228 @@
+<HTML>
+<HEAD>
+<TITLE>stc output </TITLE>
+<META NAME="keywords" CONTENT="stc, structural, thermodynamics, calculations">
+</HEAD>
+
+<body bgcolor=white text=black>
+<BODY>
+<CENTER>
+<H2>
+STC Output 
+<HR>
+</H2>
+</CENTER>
+
+<H3> Basic Results <HR></H3>
+<P>
+<B>
+Section 1-ASA (Accessible Surface Area) values
+</B>
+<P>
+This section defines the polar and nonpolar ASA values for
+the free ligand, bound ligand, free enzyme, and bound enzyme.
+These values are presented in a table 1. The 
+"free ligand ASA - bound ligand ASA" and
+"free enzyme ASA - bound enzyme ASA" for both polar and nonpolar
+quantities are what STC uses to calculate the thermodynamics of
+binding. All changes in ASA are given in Section 2, Table 2.
+
+<PRE>
+Table 1
+Species     Polar ASA (A2)      Nonpolar ASA (A2)
+Free Ligand         #               #
+Bound Ligand        #               #
+Free Enzyme         #               #
+Bound Ligand        #               #
+</PRE>
+
+<B>
+Section 2-Change in ASA values
+</B>
+<P>
+This section defines the change in ASA, nonpolar and polar, when
+comparing the free verses bound ligand and free verses bound enzyme.
+The difference in polar area upon binding for the ligand is then
+added to the respective polar value for the enzyme. This total
+change in ASA polar is what STC directly uses for thermodynamic
+calculations. The difference in nonpolar area upon binding for the
+ligand is then added to the respective nonpolar value for the enzyme. 
+This total change is ASA nonpolar is what STC directly uses for
+thermodynamic calculations.  These are global values, the dASA for
+individual atoms and residues are listed in the detailed output
+file Tables 1-4.
+
+<PRE>
+Table 2
+ Species     Polar dASA (A2)     Nonpolar dASA (A2)
+ ligand               222.30               740.50
+ enzyme               513.14               770.96
+ ligand+enzyme        735.44              1511.46
+</PRE>
+
+<B>
+Section 3-Thermodynamic values
+</B>
+<P>
+This section defines the thermodynamic values calculated from the dASA
+nonpolar and dASA polar contributions from the ligand + enzyme. The
+thermodynamic calculations listed are the global values, the individual
+atom or residue values are listed in the detailed output file. For exact
+details please see the <A href="theory.html"> 
+<a href="http://www.proteinscience.org/search.dtl"> Stc paper 
+</A>.
+<P>
+<B>DCpbind </B>is the heat capacity of
+binding and should be a negative value (positive if viewed as
+dissociation). This value is calculated from the dASA nonpolar and
+dASA polar values. The unit for heat capacity is kcal/mol/K.
+<P>
+<B>DHbind</B> is the enthalpy of binding and can be positive or
+negative. If it is positive then the enthalpy of binding is 
+unfavorable, if negative then the enthalpy of binding is 
+favorable (the opposite is true for dissociation). The enthalpy of
+binding is calculated from the heat capacity of binding plus
+the binding enthalpy at a reference temperature of 60 degrees C.
+The unit for enthalpy of binding is kcal/mol. 
+<P>
+<B>DSbind </B> is the entropy of binding and can be positive or negative.
+If this number is positive then the entropy of binding turns out to be 
+favorable, if negative then the entropy of binding turns out to be
+unfavorable (the opposite is true for dissociation). The unit for
+entropy of binding is kcal/mol/K. The entropy of binding is a sum of
+3 entropies that are listed below. The first is the solvation entropy,
+DSsol, which is directly calculated from the dASA nonpolar and
+dASA polar values (unit is kcal/mol.K). The second is the overall
+rotational/translational entropy, DSrt, which has a set value of -0.008
+kcal/mol.K. The third is the conformational entropy, DSconf, which in
+itself is a sum of 3 entropies.  The first contribution to conformational
+entropy is DSbu_ex, which is the change in conformational entropy of 
+the side chains due to tertiary or quaternary interactions during
+binding. The second contribution to conformational entropy is DSex_u,
+which is the change in conformational entropy of the side chains due to
+secondary structure changes upon binding. The third contribution to
+conformational entropy is DSbb, which is the change in conformational
+entropy of the backbone upon binding. The 3 types of conformational
+entropy are generally unfavorable with respect to binding resulting
+in a negative value having the unit kcal/mol.K.  The overall
+conformational entropy of each residue is given in Tables 5 and 6 in
+the output file containing the detailed results. The individual
+contributions (DSbu_ex , DSex_u, and DSbb) to conformational
+entropy per residue is also given in Tables 5 and 6 in the output
+file containing the detailed results.
+<P>
+<B>TDSbind</B> is the entropy of binding at the temperature
+where the structure was determined. This value is useful in calculating
+free energy.
+<P>
+<B>DGbind </B>is the free energy of binding and it is calculated from
+DHbind - TDSbind.  A negative value for DGbind indicates binding is
+favorable, a positive value for DGbind indicates binding in not
+favorable. From DGbind one can quickly calculate a Ka and Kd. Many
+of these thermodynamic values are given for each residue in Tables
+7 and 8 in the detailed output file.
+
+<PRE>
+Table 3
+Thermodynamic Values
+ DCpbind      -0.488940  kcal/mol.K
+ DHbind        6.776650  kcal/mol
+ DSbind        0.064941  kcal/mol.K
+  DSsol        0.151776  kcal/mol.K
+  DSrt        -0.008000  kcal/mol.K
+  DSconf      -0.078834  kcal/mol.K
+   DSbu->ex    0.047051  kcal/mol.K
+   DSex->u     0.000000  kcal/mol.K
+   DSbb        0.031783  kcal/mol.K
+ -TDSbind    -19.362266  kcal/mol
+ DGbind      -12.585616  kcal/mol
+ Ka           1.682e+09  1/M
+ Kd           5.945e-10  M
+</PRE>
+
+<a name="detailed">
+<H3> Detailed Results <HR></H3>
+<P>
+<B>
+Section 1-Background Information
+</B>
+<P>
+General information about the calculation and files are given.
+<PRE>
+STC Detailed Results File
+Date:
+Data File Information
+Complex Data File: *.acc
+Number of Atoms: #
+Ligand Data File: *.acc
+Number of Atoms: #
+Enzyme Data File: *.acc
+Number of Atoms: #
+</PRE>
+
+<P>
+<B>
+Section 2-Individual Atom dASA
+</B>
+<P>
+
+This section displays the results for atoms having a change in their 
+ASA when comparing the free ligand with the bound ligand and free 
+enzyme with the bound enzyme. The first table shows the results for the
+ligand, the second table is for the enzyme. Only atoms with a
+change in ASA are shown.
+<A href="output.ex.html#section2"> View an Example. </A>
+
+<P>
+<B>
+Section 3-Residue dASA
+<P></B>
+This section displays the results for residues having a change in their ASA
+when comparing the free ligand with the bound ligand and free enzyme with
+the bound enzyme. The first table shows the results for the ligand, the second
+is for the enzyme. Only residues with a change in ASA are shown.
+<A href="output.ex.html#section3"> View an Example. </A>
+
+<P>
+<B>
+Section 4- Calculating DSconf
+<P></B>
+This section displays the calculation for the conformation entropy
+for each residue. This is done separately for the ligand and the
+enzyme. It also includes the dSbu->ex, dSex->u, and dSbb values used
+to compute dSconf per residue. dASATot is the sum of nonpolar dASA
+and polar dASA for each residue. dASAsc is the change in ASA for the
+side chain of each residue. The 
+<a href="sconf.html"> next 3 entropy values </a> deal with 
+structural changes in side chain or backbone conformations upon binding.
+When added together they total dSconf.
+<A href="output.ex.html#section4"> View an Example. </A>
+
+<P>
+<B>
+Section 5-Thermodynamic values for each residue
+<P></B>
+This section gives the heat capacity of binding, the enthalpy of binding,
+the different entropies of binding, and the free energy of binding for each
+residue.  The entropy values are multiplied by the temperature the
+structure was calculated at (oK).
+<A href="output.ex.html#section5"> View an Example. </A>
+
+<P>
+<HR>
+<P>
+<a href="http://www.bionmr.ualberta.ca/bds/software/index.html">
+<img src="images/arrow.gif" border=0>
+Back to Software Centre</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>

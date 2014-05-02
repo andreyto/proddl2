@@ -1,0 +1,123 @@
+#!/bin/sh
+#
+# process pdb files - Mar 30/2001
+#
+#############################################################
+
+# arguments
+	NUMCOMP=$1
+	INPUT=$2
+	OUTPUT=$3
+	COMP1=$4
+	COMP2=$5
+
+# tmp files
+	TMP1=tmp.fix_pdb1
+	TMP2=tmp.fix_pdb2
+	TMP3=tmp.fix_pdb3
+	TMP4=tmp.fix_pdb4
+
+	echo ""
+	echo "***********************************************************"
+	echo "Reformatting $INPUT pdb file using fix_pdb..."
+
+	echo " Change any 'END' to 'TER' statements..."
+	cat $INPUT | sed 's/^ENDMDL/TER/' | sed 's/^END/TER/' > $TMP1 
+
+# define a standard for terminal oxygen
+	echo " Change any 'OT1' atoms to 'O  ', 'OT2' atoms to 'OXT'..."
+	cat $TMP1 | sed 's/OT1/O  /' | sed 's/OT2/OXT/' > $TMP2
+
+# print ATOM and HETATM and TER lines only
+	echo " Keep only ATOM, HETATM and TER lines..."
+	awk ' $1 == "ATOM" || $1 == "TER" || $1 == "HETATM" {
+		print
+	} ' < $TMP2 > $TMP3 
+
+# remove TIP and BME residues
+	echo " Remove any TIP or BME amino acid names..."
+	awk ' {
+		if ($1 == "TER") 
+			print $1
+		else {
+			if ($4 != "TIP" && $4 != "BME")
+				print
+		}
+	} ' < $TMP3 > $TMP4 
+
+# convert any 4 letter amino acid codes to 3 letter 
+	echo " Convert any 4 letter amino acids to 3 letter..."
+	cat $TMP4 | sed 's/^\(.\{20\}\)./\1 /' > $OUTPUT
+
+	if test $NUMCOMP = 2; then
+
+# find number of TERs 
+		echo " Looking for number of TER statements..."
+		nLines=`egrep -n "^TER" $OUTPUT | awk ' {
+			split($0, a, ":")
+			printf "%d ", a[1]
+		}'`
+		nTer=`echo $nLines | wc | awk ' {printf $2}'`
+
+# There should be 2, one for each molecule
+		if test $nTer != 2; then
+			echo ""
+			echo "*** Error, the total number of TER / END statements should be 2."
+			echo "Please check the input pdb file, this is what the software expects:"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER or ENDMOL"
+			exit 1
+		fi
+
+# Place each molecule in its own file
+		echo " Separate components..."
+		nTop=`echo $nLines | awk ' {printf "%d", $1}'`
+		nBot=`echo $nLines | awk ' {printf "%d", $1+1}'`
+		head -$nTop $OUTPUT > $COMP1
+		tail +$nBot $OUTPUT > $COMP2
+
+# print stats
+		num1=`wc $COMP1 | awk '{print $1}'`
+		echo " Component 1 represented by $num1 lines in the complex file."
+		num2=`wc $COMP2 | awk '{print $1}'`
+		echo " Component 2 represented by $num2 lines in the complex file."
+		if test $num1 -le 1; then
+			echo ""
+			echo "*** Error, unable to extract components (eg ligand/enzyme)."
+			echo "Please check the input pdb file, this is what the software expects:"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER or ENDMOL"
+			exit 1
+		fi
+		if test $num2 -le 1; then
+			echo ""
+			echo "*** Error, unable to extract components (eg ligand/enzyme)."
+			echo "Please check the input pdb file, this is what the software expects:"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER"
+			echo " ATOM or HETATM line"
+			echo " ATOM or HETATM line"
+			echo " ..."
+			echo " TER or ENDMOL"
+			exit 1
+		fi
+
+	fi
+
+	echo "Done fix_pdb. Reformatted pdb file saved in '$OUTPUT'."
+	echo ""
+	\rm -f $TMP1 $TMP2 $TMP3 $TMP4

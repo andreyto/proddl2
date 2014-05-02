@@ -1,0 +1,12 @@
+#
+# This is a shortened defaults file for this particular example.
+#
+# STC reads the installed defaults file first, with any entries
+# specified here taking precedence.
+#
+*sys_mode: 			P_BIND
+*amino_def: 
+*pdb1: 		dna.complex.pdb
+*pdb2:			
+*pdb3: 
+*out_dir:

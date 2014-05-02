@@ -1,0 +1,7 @@
+#
+# jrb run specific defaults
+#
+*sys_mode:		P_BIND
+*pdb1:			jrb.complex.pdb
+*pdb2:			jrb.free.pdb
+*pdb3: 

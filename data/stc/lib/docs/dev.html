@@ -1,0 +1,77 @@
+
+<HTML>
+<HEAD>
+<TITLE>stc - development notes</TITLE>
+<META NAME="keywords" CONTENT="free energy of binding, entropy, accessible surface area, stc, structural thermodynamics, pence">
+</HEAD>
+
+<body bgcolor=white text=black>
+
+<H3> Some STC Programmer Notes <HR> </H3>
+
+This section tries to look inside the blackbox of the STC package,
+what the programs are, how they work, and how they are all tied together.
+The resident wish program executes a <a href="tcl.html">
+tcl/tk </A> script in stc-v5.0/tcl/main.tcl, this is a graphics front-end for
+the stc suite. After gathering all
+required input from the user, it eventually calls 
+ <B>thermo</B> which is a c program which
+performs all the thermodynamic calculations. <B>Thermo</B> is the independent
+back-end of stc and a user could type <B>thermo</B> and be prompted for all
+the input files required to perform the calculations. <B>Thermo </B> 
+produces two output files, a short version which <B> stc </B> displays
+in a window and a verbose file.
+
+<P>
+Of course, getting input files ready for <B>thermo</B> is a fairly complex
+chore in itself. A shell script called <B>calc_asa</B> takes the
+user's input pdb files and calculates the accessible surface area files
+needed by <B>thermo</B>. The main program to do this is called <B>access</B>
+which is a fortran program also used in  
+<A href="http://www.bionmr.ualberta.ca/bds/software/vadar/index.html"> vadar</A>.
+I have compiled <B>access </B> with the Fortran libraries built in
+as not all machines have resident fortran libraries.
+<P>
+Getting pdb files into acc format involves the following. This is
+convoluted of course and perhaps one day someone may wish to clean
+this section up.
+<OL>
+<LI> <B>fix_pdb</B>, check and reformat pdb files. Discrepancies in naming convention
+	  are delt with here.
+<LI> convert pdb format to diamond format. (<B>pdbtodia</B>)
+<LI> use a program modified by William Wilcox to add standard van der waals
+(<B>addradii</B>). 
+<LI> modify the addradii output to have van der waals which match the
+amino acid library instead (<B>edpdb</B>).
+<LI> call <B>access</B> with edpdb output to calculate accessible surface area.
+</OL>
+<P>
+
+When building executables for sgi's, you have to keep in mind
+the processor type, the version of Irix and the compiler flags
+you set.  I have compiled this software on on an Octane R10000
+running Irix 6.5. I seem to have less trouble with the Irix cc compiler
+so I am sticking with that. I have had people tell me I can get
+more efficient executables by including flags such as -mips3 but
+then other people complain the executables don't work anymore on
+their system (so i'm staying generic as possible). 
+
+<P>
+<HR>
+<P>
+<a href="http://www.bionmr.ualberta.ca/bds/software/stc/index.html">
+<img src="images/arrow.gif" border=0>
+Back to main stc page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

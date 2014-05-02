@@ -1,0 +1,176 @@
+<PRE>
+# stc app-defaults file - Jan 2006 
+
+
+########################################################################
+########################################################################
+#
+# These options are specific for the user's data
+#
+########################################################################
+########################################################################
+
+#
+# Default system type  (choices are P_BIND P_UNFOLD P_OLIG)
+# binding/unfolding/oligomer
+#
+*sys_mode: 		P_BIND
+
+#
+# Specify your output directory. This directory does not get
+# created, it must already exist! Usually you leave this item
+# blank and let the software find a place to put any output.
+#
+*out_dir:
+
+#
+# Here you can specify a different default amino acid table.
+# Start with a copy of the default table in INSTALL/lib/amino.def
+# and add the missing entries. 
+#
+# eg *amino_def: /Users/me/stc/custom.amino.def
+#
+*amino_def:	
+
+#
+# If you want stc to automatically startup with your input pdb files, you can
+# enter them here.
+#   pdb1 = complex/oligomer/unfolded structure 
+#   pdb2 = ligand/monomer1/folded structure 
+#   pdb3 = enzyme/monomer2 structure  
+#
+*pdb1: 
+*pdb2: 
+*pdb3: 
+
+#
+# If you calculate your own corresponding accessible surface area
+# files, you can enter them here.
+#
+*acc1: 
+*acc2: 
+*acc3: 
+
+#
+# Sometimes the user has experiment data for Sbb and Sex->u
+# which is used in calculating Sconf (can be entered within stc)
+#   free1 = ligand/folded/monomer1
+#   free2 = enzyme/monomer2
+#
+*sconf_free1:
+*sconf_free2:
+
+#
+# Set any residues which are unfolding
+# For example: *res_unf: 64 65 66 67 68 69
+#
+*res_unf:
+
+#
+# Default temperature
+#
+*temperature: 25.0
+
+#
+# You may want to enter your own value for total sConf.  
+#
+*thermo_sconf:
+
+#
+# Specify new output file names for basic and detailed results
+#
+*out_basic: 
+*out_detail: 
+
+#
+# Where do I write out the stc log file
+#
+*log: 			./stc.log
+
+
+########################################################################
+########################################################################
+#
+# These options deal with colors, fonts, and presentation issues
+# of stc.
+#
+########################################################################
+########################################################################
+
+#
+# default place to place main window
+#
+*main_geometry: +50+50
+#
+# subscript font and offsets from normal text placement
+#
+*subscript_font: 		8x13
+*subscript_offset: 		-2
+*superscript_offset:	6
+#
+# font to display special mathematical characters
+#
+*symbol_font: -adobe-symbol-medium-r-normal--17-*-*-*-*-*-adobe-fontspecific
+#
+# width of file entry fields (number of characters)
+#
+*file_width: 50
+#
+# default colors and settings (generic widgets)
+#
+*font: 					8x13
+*foreground: 			white
+*background: 			steel blue
+*highlightBackground:	steel blue
+*highlightColor:		steel blue
+*activeBackground:		red
+*selectColor: 			PaleVioletRed
+*selectBackground:		PaleVioletRed
+*Button.Background:		light sky blue
+*Button.Foreground:		black
+*Entry.Background:		light steel blue
+*Entry.Foreground:		black
+*Message.aspect:		1500
+*Text.BorderWidth: 		0	
+*Text.Font:				-bitstream-courier-medium-r-normal--0-0-0-0-m-0-iso8859-1
+*results.text.background:		black
+#
+# settings for the histograms 
+#
+*Canvas.font:			-adobe-courier-bold-r-normal--16-*-*-*-m-*-iso8859-1
+*Canvas.Background:		steel blue
+*histo_geometry:		800x500
+*line1_color: 			red    
+*line1_shape: 			oval
+*line1_size: 			3
+*line2_color: 			blue	
+*line2_shape: 			rect
+*line2_size: 			3
+*axis_color:			black
+*xStart:				90
+*yStart:				70
+*yLabOffset:			20
+*xScaleOffset:			20
+*xTics:					9
+*yTics:					7
+
+########################################################################
+########################################################################
+#
+# Software development customization
+#
+########################################################################
+########################################################################
+
+# stc window header image file
+*head_image:
+# location of stc help files
+*help_file:
+# location of the directory containing programs stc wants to call 
+*bin_dir:
+# location of the script to fix pdb files 
+*fix_pdb:
+# location of the program which calculates ASA of a molecule 
+*calc_asa:
+# location of the program which calculates thermodynamics of a molecule 
+*thermo_proc:

@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="keywords" CONTENT="stc, structural, thermodynamics, calculations">
+<TITLE>stc overview</TITLE>
+</HEAD>
+
+<H2> STC Overview <HR> </H2>
+<P ALIGN="JUSTIFY">STC performs free energy calculations from the
+structure of the different complexes in a graphical user interface.
+We have compiled executable versions for sgi, sun and linux PC which
+are accessible for free at the PENCE-MRC software download site.
+<P>
+In essence STC consists of two modules.
+The first module, <B>calc_asa</B>, calculates the change in 
+accessible surface area (ASA) for
+the dissociation process from the coordinate files in the Brookhaven
+protein data bank (pdb) format using the algorithm
+ANAREA (Richmond, 1984) as implemented in the
+program VADAR (Wishart et al.,1994). The output files consists of the 
+tabulated ASA of each atom of the complex, both the free
+forms of the enzyme and the ligand, as well the difference in 
+ASA for each atom. The total changes in non-polar
+(all carbon atoms and sulfur atoms) and polar
+(all oxygen and nitrogen atoms) are summed up. In addition, the
+atomic change in ASA are
+regrouped per residues (and per side-chain) for calculating
+the change in S <SUB>conf</SUB>.
+<P>
+The module <B>thermo </B>calculates the energetics from the change in ASA.
+The total change in ASA is the sum of the ASA<SUB>p</SUB> and ASA<SUB>np</SUB> 
+which distinguishes between the contributions of polar and non-polar
+atoms. These are then used to calculate the change in C<SUB>p</SUB> and 
+H<SUP>o</SUP><SUB>d</SUB> for a desired temperature T. 
+From the change in ASA of the different side-chains involved in the
+dissociation, the conformational entropy gained for the ligand
+and the enzyme is calculated. Finally, the total entropy change is 
+calculated as the sum of all the entropic contributions.
+
+<P>
+<HR>
+<P>
+<a href="index.html">
+<img src="images/arrow.gif" border=0>
+Back to stc main page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

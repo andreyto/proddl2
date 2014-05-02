@@ -1,0 +1,12 @@
+#
+# olig run specific defaults
+#
+*sys_mode: 		P_OLIG
+*pdb1: 			olig.pdb
+*pdb2: 
+*pdb3: 
+*acc1: 		
+*acc2: 		
+*acc3: 		
+*sconf_free1:
+*sconf_free2:

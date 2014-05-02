@@ -1,0 +1,16 @@
+#!/bin/bash
+
+_deps_root=$@PROJECT_NAME@_ROOT/deps
+
+export IMP_HOME=$_deps_root/IMP
+
+PATH=$_deps_root/bin:$IMP_HOME/bin:$PATH
+
+imp_lib=$IMP_HOME/lib64
+
+imp_python=python@PRODDL_PYTHON_VERSION_MAJOR_MINOR@
+
+export PYTHONPATH=$imp_lib/$imp_python/site-packages:$PYTHONPATH
+
+export LD_LIBRARY_PATH=$imp_lib:$LD_LIBRARY_PATH
+

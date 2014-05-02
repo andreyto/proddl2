@@ -1,0 +1,10 @@
+*.pyc
+*~
+*.swp
+*.egg
+*.egg-info/
+build/
+distribute-*.gz
+setup.cfg
+setup.py
+lib/PRODDL/config.py

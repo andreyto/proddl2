@@ -1,0 +1,6 @@
+When static library was built according to Makefile that comes with gzstream package,
+any Python extension that referenced it segfaulted for unclear reason.
+Could be related to LAM MPI compilation.
+Therefore, the source files were moved to DockTK directory tree and compiled explicitly
+from setup.py.
+

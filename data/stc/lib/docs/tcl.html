@@ -1,0 +1,37 @@
+<HEAD>
+<TITLE>TCL/Tk</TITLE>
+</HEAD>
+<BODY><P>
+ <H1>TCL/Tk</H1>
+<P>
+TCL (pronounced Tickle) is a simple interpretive programming language.
+Tk (pronounced tee-kay) is a graphics toolkit callable from TCL.
+TCL/Tk has been developed at the University of California at Berkeley
+(UCB) funded by NASA, DARPA and by Digital in 1990.  It has been
+placed in the public domain and add-on developments by third parties
+encouraged. 
+There are no licensing problems in using
+TCL/TK in commercial applications.
+<P>
+TCL is designed to be embedded in applications written in C. If the
+low level workhorse routines of the application are written in C and
+the higher level controlling routines in TCL, then the application may
+be readily re-configured or extended, much like Emacs is controlled by
+a built in LISP interpreter.  The ISLE development already used a
+Librarian and object store written in C++ so it was felt that there
+was little need to embed TCL into C programmed structure tools.
+Instead the structuring applications were written in entirely in
+TCL/Tk and a communications extension to TCL:  TCL-TCP was used to
+communicate with the librarian/object store. The Windowing shell
+``Wish'' which reads TCL commands and executes them was therefore used
+as the tool to both develop and run the tools.
+<P>
+TCL is an interpretative language, therefore debugging of applications
+was found to be much easier as elements of code could be tried out
+within the interpreter before being included in the actual TCL
+program.  All variables were visible via the interpreter and any
+patches required to the state of the application could be made to
+allow execution and debugging to continue.
+<P>
+
+</BODY>

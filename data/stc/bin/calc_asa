@@ -1,0 +1,114 @@
+#!/bin/sh
+#
+# Calculates asa file from pdb file. The pdb file should be checked
+# over with the fix_pdb script before it is input into this script.
+#
+# Arguments for calc_asa:
+#
+# BIN_DIR = location of where to find the various software
+# AMINO_TABLE = location of the amino.def (residue library) file
+# TMP_DIR = a directory to store intermediate results (eg, /tmp)
+# ROOT = a string which uniquely identifies the files created in TMP_DIR
+# input_pdb = input_pdb file
+# out_acc = output accessible surface area file
+#
+
+BIN_DIR=$1
+AMINO_TABLE=$2
+TMP_DIR=$3
+ROOT=$4
+input_pdb=$5
+out_acc=$6
+
+# create file names for the temp files
+tmp_dia=$TMP_DIR/$ROOT.dia
+tmp_seq=$TMP_DIR/$ROOT.seq
+tmp_addradii=$TMP_DIR/$ROOT.addradii
+tmp_edpdb=$TMP_DIR/$ROOT.edpdb
+
+# remove any old output files first
+\rm -f $tmp_dia $tmp_seq $tmp_addradii $tmp_edpdb $out_acc
+
+#################################################################
+#
+# run pdbtodia (the diamond format is required by addradii)
+#
+echo ""
+echo "***********************************************************"
+echo "* Calculating accessible surface area for '$input_pdb'"
+echo "***********************************************************"
+echo ""
+echo "***********************************************************"
+echo "Running pdbtodia - format $input_pdb into diamond format for addradii."
+echo "$input_pdb
+$tmp_dia
+$tmp_seq
+" | $BIN_DIR/pdbtodia
+if test ! -s $tmp_dia; then
+	echo "*** Error, no output from pdbtodia. Output = $tmp_dia"
+	exit 1
+else
+	echo " Amino acid sequence: "
+	awk '{printf " %s", $3}' < $tmp_seq
+	echo ""
+	num=`wc $tmp_seq | awk '{print $1}'`
+	echo " Number of amino acids: $num"
+	echo "Done pdbtodia. Re-formatted output in $tmp_dia"
+fi
+
+#################################################################
+#
+# run addradii with the following default settings
+#
+echo ""
+echo "***********************************************************"
+echo "Running addradii on $tmp_dia"
+echo "$tmp_dia
+$tmp_addradii
+00001 10000
+
+" | $BIN_DIR/addradii
+if test ! -s $tmp_addradii; then
+	echo "*** Error, no output from addradii."
+	exit 1
+fi
+
+#################################################################
+#
+# run edpdb (this fixes up the addradii output file by reading
+#   in the values from our residue library)
+#
+echo ""
+echo "***********************************************************"
+echo "Running edpdb on $tmp_addradii - fixes addradii output by"
+echo "reading in the data from specified residue library"
+echo "$tmp_addradii
+$tmp_edpdb
+$AMINO_TABLE
+" | $BIN_DIR/edpdb
+if test ! -s $tmp_edpdb; then
+	echo "*** Error, no output from edpdb. Probably you are using"
+	echo "residues and atoms which are not defined in the lib/amino.def file."
+	echo "    1) Search the stc installation directory for the amino.def file."
+	echo "    2) Copy the amino.def file to your current dir."
+	echo "    3) Add the missing amino acid entries."
+	echo "    3) Add the missing amino acid entries."
+	exit 1
+fi
+
+#################################################################
+#
+# run access with these settings
+#
+echo ""
+echo "***********************************************************"
+echo "Running access on $tmp_edpdb"
+echo "$tmp_edpdb
+$out_acc
+0.05 1.4 1
+" | $BIN_DIR/access
+if test ! -s $out_acc; then
+	echo "*** Error, no output from access."
+	exit 1
+fi
+echo "Done"

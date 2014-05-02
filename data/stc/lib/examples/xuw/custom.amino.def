@@ -1,0 +1,592 @@
+#
+# This file contains the information about amino acids required
+# by the program thermo and edpdb in the stc package.
+#
+# Last update: Nov 2003
+#
+###################################################################
+#
+# Format Description
+#
+# Each residue in this table is defined in the following manner.
+# Lines preceding with '#' are comments and are skipped.
+# Field delimiters are denoted with white space or tabs.
+#
+# Residue Description Line:
+#
+#    Field #1 - RESIDUE (required keyword)
+#    Field #2 - residue type (ATOM or NUCL or HETA or WATER)
+#                  ATOM = amino acid, 
+#                  NUCL = nucleic acids
+#                  HETA = heteroatoms (e.g.HEMES)
+#                  WATER = solvent (eg, HOH, WAT, MOH)
+#    Field #3 - a residue name (1, 2, or 3 characters in length) 
+#
+# Following the residue description line are entries which follow
+# one of the formats below. Entries for the above residue are read
+# until the next RESIDUE line is found or end of file reached. 
+#
+# Format #1 (thermodynamics parameters)
+#
+#    Field #1 - THERMO (required keyword)
+#    Field #2 - Residue ID number
+#                  -99 means all residue IDs in the sequence apply
+#    Field #3 - ASAsc 
+#                  if not set to 0.0, use field #4 in SBuEx calculation
+#                  if not set to 0.0, use field #5 in SeXu calculation
+#    Field #4 - dSBuEx
+#    Field #5 - dSeXu
+#    Field #6 - dSBB
+#
+# Format #2 (atom descriptions)
+#
+#    Field #1 - ATOM (required keyword identifying each atom of a residue). 
+#    Field #2 - Atom name (1, 2, 3, or 4 letter character string)
+#    Field #3 - van der waals radius
+#    Field #4 - 0 or 1 where polar = 1, non-polar = 0
+#    Field #5 - 0 or 1 where backbone atom = 1, sidechain atom = 0
+#
+#
+###################################################################
+#
+# Regular amino acids
+#
+RESIDUE ATOM ALA
+THERMO -99    67.0    0.0    0.00  4.10
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+#
+RESIDUE ATOM ARG
+THERMO -99    196.0    7.11  -0.84  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD  1.87 0 0
+ATOM  NE  1.65 1 0
+ATOM  CZ  1.76 0 0
+ATOM  NH1 1.65 1 0
+ATOM  NH2 1.65 1 0
+#
+RESIDUE ATOM ASN
+THERMO -99    113.0    3.29   2.24  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  OD1 1.40 1 0
+ATOM  ND2 1.65 1 0
+#
+RESIDUE ATOM ASP 
+THERMO -99    106.0    2.00   2.16  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  OD1 1.40 1 0
+ATOM  OD2 1.40 1 0
+#
+RESIDUE ATOM CYS
+THERMO -99    104.0    3.55   0.61  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  SG  1.85 0 0
+#
+RESIDUE ATOM GLN 
+THERMO -99    144.0    5.02   2.12  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 0
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD  1.76 0 0
+ATOM  OE1 1.40 1 0
+ATOM  NE2 1.65 1 0
+#
+RESIDUE ATOM GLU
+THERMO -99    138.0    3.53   2.27  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD  1.76 0 0
+ATOM  OE1 1.40 1 0
+ATOM  OE2 1.40 1 0
+#
+RESIDUE ATOM GLY
+THERMO -99    0.0   0.00   0.00  6.50 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+#
+RESIDUE ATOM HIS
+THERMO -99    151.0    3.44   0.79  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  ND1 1.65 1 0
+ATOM  CD2 1.76 0 0
+ATOM  CE1 1.76 0 0
+ATOM  NE2 1.65 1 0
+#
+RESIDUE ATOM ILE
+THERMO -99    140.0    1.74   0.67  2.18 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG1 1.87 0 0
+ATOM  CG2 1.87 0 0
+ATOM  CD1 1.87 0 0
+#
+RESIDUE ATOM LEU
+THERMO -99    137.0    1.63   0.25  3.40 
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD1 1.87 0 0
+ATOM  CD2 1.87 0 0
+#
+RESIDUE ATOM LYS
+THERMO -99    167.0    5.86   1.02  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD  1.87 0 0
+ATOM  CE  1.87 0 0
+ATOM  NZ  1.50 1 0
+#
+RESIDUE ATOM MET
+THERMO -99    160.0    4.55   0.58  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  SD  1.85 0 0
+ATOM  CE  1.87 0 0
+#
+RESIDUE ATOM PHE
+THERMO -99    175.0    1.40   2.89  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  CD1 1.76 0 0
+ATOM  CD2 1.76 0 0
+ATOM  CE1 1.76 0 0
+ATOM  CE2 1.76 0 0
+ATOM  CZ  1.76 0 0
+#
+RESIDUE ATOM PRO
+THERMO -99    105.0    0.00   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.87 0 0
+ATOM  CD  1.87 0 0
+#
+RESIDUE ATOM SER
+THERMO -99    80.0    3.68   0.55  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  OG  1.40 1 0
+#
+RESIDUE ATOM THR
+THERMO -99    102.0    3.31   0.48  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  OG1 1.40 1 0
+ATOM  CG2 1.87 0 0
+#
+RESIDUE ATOM TRP
+THERMO -99    217.0    2.74   1.15  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  CD1 1.76 0 0
+ATOM  CD2 1.76 0 0
+ATOM  NE1 1.65 1 0
+ATOM  CE2 1.76 0 0
+ATOM  CE3 1.76 0 0
+ATOM  CZ2 1.76 0 0
+ATOM  CZ3 1.76 0 0
+ATOM  CH2 1.76 0 0
+#
+RESIDUE ATOM TYR
+THERMO -99    187.0    2.78   3.12  3.40
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  CD1 1.76 0 0
+ATOM  CD2 1.76 0 0
+ATOM  CE1 1.76 0 0
+ATOM  CE2 1.76 0 0
+ATOM  CZ  1.76 0 0
+ATOM  OH  1.40 1 0
+#
+RESIDUE ATOM VAL
+THERMO -99    117.0    0.12   1.29  2.18
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG1 1.87 0 0
+ATOM  CG2 1.87 0 0
+#
+###################################################################
+#
+# unusual residues
+#
+###################################################################
+#
+RESIDUE ATOM ASX
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  AD1 1.50 0 0
+ATOM  AD2 1.50 0 0
+#
+RESIDUE ATOM GLX 
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.87 0 0
+ATOM  CG  1.76 0 0
+ATOM  CD  1.87 0 0
+ATOM  AE1 1.50 0 0
+ATOM  AE2 1.50 0 0
+#
+RESIDUE ATOM MDH 
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CB  1.76 0 0
+ATOM  CM  1.87 0 0
+#
+RESIDUE ATOM ADD 
+THERMO -99    387.0    8.70   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  C1  1.87 0 0
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  C2  1.87 0 0
+ATOM  CB  1.76 0 0
+ATOM  CG  1.76 0 0
+ATOM  CD  1.76 0 0
+ATOM  C3  1.87 0 0
+ATOM  CE  1.76 0 0
+ATOM  CF  1.76 0 0
+ATOM  C4  1.87 0 0
+ATOM  CH  1.87 0 0
+ATOM  O5  1.40 1 0
+ATOM  C5  1.87 0 0
+ATOM  CI  1.87 0 0
+ATOM  CJ  1.76 0 0
+ATOM  CP  1.76 0 0
+ATOM  CK1 1.76 0 0
+ATOM  CK2 1.76 0 0
+ATOM  CM1 1.76 0 0
+ATOM  CM2 1.76 0 0
+#
+RESIDUE ATOM MAS 
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  N   1.65 1 1
+ATOM  CA  1.87 0 1
+ATOM  CB  1.87 0 0
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CG  1.87 0 0
+ATOM  C1  1.76 0 0
+ATOM  O1  1.40 1 0
+ATOM  O2  1.40 1 0
+#
+RESIDUE ATOM ACE
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  C   1.76 0 1
+ATOM  O   1.40 1 1
+ATOM  CH3 1.87 0 0
+#
+###################################################################
+#
+# Nucleic Acids and others
+#
+###################################################################
+#
+RESIDUE NUCL A
+THERMO -99  278.0        0.00   0.00  0.00
+ATOM  P   1.90 1 1
+ATOM  O1P 1.40 1 1
+ATOM  O2P 1.40 1 1
+ATOM  O5* 1.40 1 1
+ATOM  C5* 1.87 0 1
+ATOM  C4* 1.87 0 1
+ATOM  O4* 1.40 1 1
+ATOM  C3* 1.87 0 1
+ATOM  O3* 1.40 1 1
+ATOM  C2* 1.87 0 1
+ATOM  C1* 1.87 0 1
+ATOM  N9  1.60 1 0
+ATOM  C8  1.80 0 0
+ATOM  N7  1.60 1 0
+ATOM  C5  1.76 0 0
+ATOM  C6  1.76 0 0
+ATOM  N6  1.60 1 0
+ATOM  N1  1.60 1 0
+ATOM  C2  1.76 0 0
+ATOM  N3  1.60 1 0
+ATOM  C4  1.76 0 0
+#
+RESIDUE NUCL C
+THERMO -99  244.0        0.00   0.00  0.00
+ATOM  P   1.90 1 1
+ATOM  O1P 1.40 1 1
+ATOM  O2P 1.40 1 1
+ATOM  O5* 1.40 1 1
+ATOM  C5* 1.87 0 1
+ATOM  C4* 1.87 0 1
+ATOM  O4* 1.40 1 1
+ATOM  C3* 1.87 0 1
+ATOM  O3* 1.40 1 1
+ATOM  C2* 1.87 0 1
+ATOM  C1* 1.87 0 1
+ATOM  N1  1.60 1 0
+ATOM  C2  1.76 0 0
+ATOM  O2  1.40 1 0
+ATOM  N3  1.60 1 0
+ATOM  C4  1.76 0 0
+ATOM  N4  1.60 1 0
+ATOM  C5  1.76 0 0
+ATOM  C6  1.76 0 0
+#
+RESIDUE NUCL G
+THERMO -99  287.0        0.00   0.00  0.00
+ATOM  P   1.90 1 1
+ATOM  O1P 1.40 1 1
+ATOM  O2P 1.40 1 1
+ATOM  O5* 1.40 1 1
+ATOM  C5* 1.87 0 1
+ATOM  C4* 1.87 0 1
+ATOM  O4* 1.40 1 1
+ATOM  C3* 1.87 0 1
+ATOM  O3* 1.40 1 1
+ATOM  C2* 1.87 0 1
+ATOM  C1* 1.87 0 1
+ATOM  N9  1.60 1 0
+ATOM  C8  1.80 0 0
+ATOM  N7  1.60 1 0
+ATOM  C5  1.76 0 0
+ATOM  C6  1.76 0 0
+ATOM  O6  1.40 1 0
+ATOM  N1  1.60 1 0
+ATOM  C2  1.76 0 0
+ATOM  N2  1.60 1 0
+ATOM  N3  1.60 1 0
+ATOM  C4  1.76 0 0
+#
+RESIDUE NUCL T
+THERMO -99  256.0        0.00   0.00  0.00
+ATOM  P   1.90 1 1
+ATOM  O1P 1.40 1 1
+ATOM  O2P 1.40 1 1
+ATOM  O5* 1.40 1 1
+ATOM  C5* 1.87 0 1
+ATOM  C4* 1.87 0 1
+ATOM  O4* 1.40 1 1
+ATOM  C3* 1.87 0 1
+ATOM  O3* 1.40 1 1
+ATOM  C2* 1.87 0 1
+ATOM  C1* 1.87 0 1
+ATOM  N1  1.60 1 0
+ATOM  C2  1.76 0 0
+ATOM  O2  1.40 1 0
+ATOM  N3  1.60 1 0
+ATOM  C4  1.76 0 0
+ATOM  O4  1.40 1 0
+ATOM  C5  1.76 0 0
+ATOM  C5M 1.80 0 0
+ATOM  C6  1.76 0 0
+#
+RESIDUE NUCL U
+THERMO -99  235.0        0.00   0.00  0.00
+ATOM  P   1.90 1 1                     
+ATOM  O1P 1.40 1 1
+ATOM  O2P 1.40 1 1
+ATOM  O5* 1.40 1 1
+ATOM  C5* 1.87 0 1
+ATOM  C4* 1.87 0 1
+ATOM  O4* 1.40 1 1
+ATOM  C3* 1.87 0 1
+ATOM  O3* 1.40 1 1
+ATOM  C2* 1.87 0 1
+ATOM  O2* 1.40 1 1
+ATOM  C1* 1.87 0 1
+ATOM  N1  1.60 1 0
+ATOM  C2  1.76 0 0
+ATOM  O2  1.40 1 0
+ATOM  N3  1.60 1 0
+ATOM  C4  1.76 0 0
+ATOM  O4  1.40 1 0
+ATOM  C5  1.76 0 0
+ATOM  C6  1.76 0 0
+#
+RESIDUE HETATM HEM
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM FE   1.47 0 0
+ATOM  CHA 2.00 0 0
+ATOM  CHB 2.00 0 0
+ATOM  CHC 2.00 0 0
+ATOM  CHD 2.00 0 0
+ATOM  N_A 1.55 1 0
+ATOM  C1A 1.78 0 0
+ATOM  C2A 1.78 0 0
+ATOM  C3A 1.78 0 0
+ATOM  C4A 1.78 0 0
+ATOM  CMA 1.90 0 0
+ATOM  CAA 1.90 0 0
+ATOM  CBA 1.90 0 0
+ATOM  CGA 1.90 0 0
+ATOM  N_B 1.55 1 0
+ATOM  C1B 1.78 0 0
+ATOM  C2B 1.78 0 0
+ATOM  C3B 1.78 0 0
+ATOM  C4B 1.78 0 0
+ATOM  CMB 1.90 0 0
+ATOM  CAB 1.90 0 0
+ATOM  CBB 1.90 0 0
+ATOM  N_C 1.55 1 0
+ATOM  C1C 1.78 0 0
+ATOM  C2C 1.78 0 0
+ATOM  C3C 1.78 0 0
+ATOM  C4C 1.78 0 0
+ATOM  CMC 1.90 0 0
+ATOM  CAC 1.90 0 0
+ATOM  CBC 1.90 0 0
+ATOM  N_D 1.55 1 0
+ATOM  C1D 1.78 0 0
+ATOM  C2D 1.78 0 0
+ATOM  C3D 1.78 0 0
+ATOM  C4D 1.78 0 0
+ATOM  CMD 1.90 0 0
+ATOM  CAD 1.90 0 0
+ATOM  CBD 1.90 0 0
+ATOM  CGD 1.90 0 0
+ATOM  O1A 1.35 1 0
+ATOM  O2A 1.35 1 0
+ATOM  O1D 1.35 1 0
+ATOM  O2D 1.35 1 0
+#
+RESIDUE WATER HOH
+THERMO -99    0.0        0.00   0.00  0.00
+ATOM  O   1.40 1 0
+#
+# Here I have added my custom residue
+#
+RESIDUE ATOM EMD 
+THERMO -99    67.0    0.0    0.00  4.10
+ATOM   S1  1.70 0 0      
+ATOM   C2  1.70 0 0      
+ATOM   O2  1.70 1 0      
+ATOM   N3  1.70 1 0      
+ATOM   H3  1.70 0 0      
+ATOM   N4  1.70 0 0      
+ATOM   C5  1.70 0 0      
+ATOM   C6  1.70 0 0      
+ATOM   H6  1.70 0 0      
+ATOM   C7  1.70 0 0      
+ATOM   H71 1.70 0 0      
+ATOM   H72 1.70 0 0      
+ATOM   H73 1.70 0 0      
+ATOM   C8  1.70 0 0      
+ATOM   C9  1.70 0 0      
+ATOM   H9  1.70 0 0      
+ATOM   C10 1.70 0 0      
+ATOM   C11 1.70 0 0      
+ATOM   C12 1.70 0 0      
+ATOM   H12 1.70 0 0      
+ATOM   C13 1.70 0 0      
+ATOM   H13 1.70 0 0      
+ATOM   N14 1.70 0 0      
+ATOM   C15 1.70 0 0      
+ATOM  H151 1.70 0 0      
+ATOM  H152 1.70 0 0      
+ATOM   C16 1.70 0 0      
+ATOM  H161 1.70 0 0      
+ATOM  H162 1.70 0 0      
+ATOM   C17 1.70 0 0      
+ATOM  H171 1.70 0 0      
+ATOM  H172 1.70 0 0      
+ATOM   C18 1.70 0 0      
+ATOM   O18 1.70 0 0      
+ATOM   C19 1.70 0 0      
+ATOM   C20 1.70 0 0      
+ATOM   H20 1.70 0 0      
+ATOM   C21 1.70 0 0      
+ATOM   O21 1.70 0 0      
+ATOM   C22 1.70 0 0      
+ATOM   O22 1.70 0 0      
+ATOM   C23 1.70 0 0      
+ATOM   H23 1.70 0 0      
+ATOM   C24 1.70 0 0      
+ATOM   H24 1.70 0 0      
+ATOM   C25 1.70 0 0      
+ATOM  H251 1.70 0 0      
+ATOM  H252 1.70 0 0      
+ATOM  H253 1.70 0 0      
+ATOM   C26 1.70 0 0      
+ATOM  H261 1.70 0 0      
+ATOM  H262 1.70 0 0      
+ATOM  H263 1.70 0 0      

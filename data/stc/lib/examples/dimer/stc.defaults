@@ -1,0 +1,9 @@
+#
+# dimer defaults
+#
+*sys_mode: 		P_UNFOLD
+*pdb1: 			dimer.pdb
+*pdb2:			dimerpart.pdb 
+*pdb3: 
+*amino_def: 		
+*res_unf: 		64 65 66 67 68 69

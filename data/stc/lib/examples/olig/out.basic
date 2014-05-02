@@ -1,0 +1,33 @@
+
+Structural Thermodynamic Calculations Basic Results
+Date: Mon Mar 27 15:10:43 2006
+
+Accessible Surface Area (ASA)
+   Species      Polar ASA (Å2)    Nonpolar ASA (Å2)
+   -------      --------------    -----------------
+   Free-monomer1       2793.72              3135.85
+   Bound-monomer1      2453.07              2687.00
+   Free-monomer2       2798.93              3132.69
+   Bound-monomer2      2455.57              2685.91
+
+Change in Accessible Surface Area (ASA)
+   Species     Polar DASA (Å2)   Nonpolar DASA (Å2)
+   -------     ---------------   ------------------
+   monomer1             340.65               448.85
+   monomer2             343.36               446.78
+   monomer1+monomer2    684.01               895.63
+
+Thermodynamic Values
+   DCpbind      -0.225190  kcal/mol.K
+   DHbind       -6.037146  kcal/mol
+   DSbind        0.047126  kcal/mol.K
+    DSsol        0.082387  kcal/mol.K
+    DSrt        -0.008000  kcal/mol.K
+    DSconf      -0.027261  kcal/mol.K
+     DSbu->ex    0.027261  kcal/mol.K
+     DSex->u     0.000000  kcal/mol.K
+     DSbb        0.000000  kcal/mol.K
+   -TDSbind    -14.050631  kcal/mol
+   DGbind      -20.087777  kcal/mol
+   Ka           5.312e+14  1/M
+   Kd           1.882e-15  M

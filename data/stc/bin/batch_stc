@@ -1,0 +1,190 @@
+#!/bin/tcsh
+#
+##############################################################
+#
+# batch_stc
+#
+# The following script can be used to bypass the graphics
+# mode of stc and run several pdb files for binding calculations.
+#
+# The script makes a number of assumptions in how you want to 
+# make the calculations. It is your responsibility to verify 
+# that this is what you want stc to do. I suggest you only
+# run this script on one pdb first before doing several.
+#
+# Here is an overall description of what you need to do:
+#
+#   1) First, you are typing commands in some type of terminal window.
+#
+#	2) You have placed a test pdb data file in a directory X.
+#
+#   3) cd to directory X.
+#
+#   4) Put a copy of this batch_stc script in directory X. 
+#
+#   5) Make sure the script is executable:
+#
+#			chmod +x ./batch_stc
+#
+#   6) Edit this script to suit your specific needs. Hints are
+#      described in the comments below, likely the only change
+#      necessary is the correct setting for 'STC_HOME'.
+#
+#   7) Run the script and verify the results for this single pdb file.
+#
+#			./batch_stc
+#
+#   8) Now it is time to examine the thermodynamic parameters in the
+#      THERMO section below. I have set up a generic invokation, 
+#      perhaps you want to do something a bit more specialized. 
+#      You can run the calculations interactively by typing: 
+#
+#			$STC_HOME/bin/thermo
+#
+#      If you are doing something different, then substitute your
+#      answers for mine in the script.
+#
+#   9) Again, run the script and verify the results for this single pdb file.
+#
+#			./batch_stc
+#
+#  10) Copy over the rest of your pdb data files. Run the script.
+#
+##############################################################
+
+#
+# Indicate the directory where stc is installed. Specify
+# the full pathname!
+#
+setenv STC_HOME "/Users/rbo/proj/stc/src"
+
+if (! -d $STC_HOME ) then
+	echo ""
+	echo " Cannot find '$STC_HOME'. Have you set up STC_HOME correctly" 
+	echo " within this script? "
+	echo ""
+	exit 
+endif
+
+#
+# Here is where we find the programs and residue library.
+# Unless you have your own personalized residue library, there are no
+# changes here.
+#
+set BIN_DIR=$STC_HOME/bin 
+set AMINO_DEF="$STC_HOME/lib/amino.def"
+
+#
+# Place all the intermediate output files into a workspace area of
+# the current directory. There is no reason to change this part! 
+# These intermediate files are useful in the debug process.
+#
+set TMP_DIR=./tmp.stc
+\rm -rf $TMP_DIR
+mkdir $TMP_DIR
+
+#
+# Here is how to call the main calc_asa script. No change here.
+#
+set CALC_ASA="$BIN_DIR/calc_asa $BIN_DIR $AMINO_DEF $TMP_DIR"
+
+#
+# This is how i will find all your pdb files for processing.
+# The default is to look in the current directory for files with .pdb suffix
+# Again, i anticipate that this is what you want to do.
+# 
+set PDB_FILES=`ls -1 ./*.pdb`
+
+#
+# Here we process each pdb file 
+#
+echo ""
+echo " STC batch script"
+echo ""
+foreach i ( $PDB_FILES )
+
+	echo "Calculating ASA for $i"
+
+	#
+	# Strip off the ".pdb" part, what remains is the basic file root.
+	#
+	set root=`echo $i | sed 's?\.pdb??'`
+
+	#
+	# I have assumed that your pdb file contains both ligand and enzyme. 
+	#
+	set COMPLEX=$root.complex
+	set LIGAND=$root.ligand
+	set ENZYME=$root.enzyme
+
+	#
+	# Generic input pdb files need to be checked first with fix_pdb.
+	# Notice I have assumed your ligand is entered first in the complex pdb!
+	#
+	$BIN_DIR/fix_pdb 2 $i $COMPLEX $LIGAND $ENZYME > $TMP_DIR/$root.fixpdb.log
+
+	#
+	# Calculate asa for complex, ligand, and enzyme 
+	#
+	$CALC_ASA $root $COMPLEX $COMPLEX.acc  > $TMP_DIR/$COMPLEX.log
+	$CALC_ASA $root $LIGAND $LIGAND.acc  > $TMP_DIR/$LIGAND.log
+	$CALC_ASA $root $ENZYME $ENZYME.acc  > $TMP_DIR/$ENZYME.log
+
+	# Here we do thermodynamics calculations for each ASA file.
+	#
+	# Since the thermo program was designed to be interactive, we need to echo
+	# the correct answers to the program.  
+	
+	The following is only one possible
+	# way that you can answer the questions. When you analyze your first run,
+	# you should invoke thermo separately (eg, type $BIN_DIR/thermo) and 
+	# confirm that the answers presented here is how you want to make
+	# the calculations. I have set sbb to be calculated, sexu = 0 in this
+	# invokation. 
+
+	echo "Thermodynamics calculations for $i (binding)"
+	echo " 1 \
+	$root.basic \
+	$root.detail \
+	$AMINO_DEF \
+	$COMPLEX.acc \
+	$LIGAND.acc \
+	$ENZYME.acc \
+	n \
+	n \
+	n \
+	3 \
+	1 \
+	5 \
+	0 " | $BIN_DIR/thermo -log $TMP_DIR/$root.thermo.log > /dev/null
+
+	#
+	# move intermediate files to temporary workspace 
+	# once things are working, you may not want to see the asa files.
+	#	mv $LIGAND.acc $ENZYME.acc $COMPLEX.acc $TMP_DIR
+	#
+	mv $LIGAND $ENZYME $COMPLEX $TMP_DIR
+
+	#
+	# This is a good time to do summary statistics after processing each pdb.
+	# You may want to do something more sophisticated than this.
+	grep DGbind $root.basic
+	echo " "
+
+end
+
+#
+# Now let's sort all the basic output files according to delta G binding.
+# Again, you may want to do your own stats using your own scripts.
+# Please feel free to tell me and i will advertise them on the stc
+# website. cheers,
+#
+#
+\rm -f out.dgbind
+grep DGbind *.basic | sort -k 3,3 > out.dgbind
+
+#
+# Assuming that everything has gone ok, I clean out the temporary workspace 
+# You should comment this line out if you are still verifying results.
+# 
+\rm -rf $TMP_DIR

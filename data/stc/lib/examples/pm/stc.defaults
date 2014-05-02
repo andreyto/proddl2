@@ -1,0 +1,15 @@
+#
+# pm run specific defaults
+#
+*sys_mode: 			P_BIND
+*pdb1:		 		pm.complex.pdb
+*pdb2:	 
+*pdb3: 				pm.enzyme.pdb
+*acc1: 		
+*acc2: 		
+*acc3: 		
+*sconf_free1:
+*sconf_free2:		pm.enzyme.sconf
+*out_basic:
+*out_detail:
+*amino_table: 		

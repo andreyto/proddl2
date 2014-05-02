@@ -1,0 +1,122 @@
+
+
+ What system do you wish to run on
+   1) binding
+   2) unfolding
+   3) oligomerization
+   0) exit 
+
+
+
+
+ Please enter your basic results output file.
+
+
+
+ Please enter your detailed results output file.
+
+
+
+ Please enter the amino acid definition file
+
+Amino defs file: /polaris/rbo/proj/stc/lib/amino.def
+Number of residues read: 33
+
+
+ Please enter the access output file for your
+ complex structure.
+
+Number of atoms processed: 807
+
+
+ Please enter the access output file for your
+ ligand structure.
+
+Number of atoms processed: 696
+
+
+ Please enter the access output file for your
+ enzyme structure.
+
+Number of atoms processed: 111
+
+Have you experiment data for ligand Sbb or Ssidechain? (y/n)
+
+>> 
+Have you experiment data for enzyme Sbb or Ssidechain? (y/n)
+
+>> 
+   Section 1: Data File Information
+   ********************************
+
+ Complex data file: .complex.acc
+ Number of atoms: 807
+
+ Structure #1 data file: .ligand.acc
+ Number of atoms: 696
+
+ Structure #2 data file: .enzyme.acc
+ Number of atoms: 111
+
+
+Any residue unfolding in the partially unfolded
+ intermediate or upon dissociation? (y/n)
+
+>> 
+
+ Residues Unfolding: None
+
+
+Parameter Settings
+
+  1) Change sConf: current value = -23.125
+  2) Change temperature: current value =  25.000
+  3) Options for Sbb: current value = 0
+  4) Options for Sex->u: current value = 0
+  5) Run calculations
+  0) Exit program
+
+
+>> 
+ How do we treat Sbb?
+  0 = set to zero
+  1 = read values from dataFile
+
+>> 
+Parameter Settings
+
+  1) Change sConf: current value = -23.125
+  2) Change temperature: current value =  25.000
+  3) Options for Sbb: current value = 1
+  4) Options for Sex->u: current value = 0
+  5) Run calculations
+  0) Exit program
+
+
+>> 
+Thermodynamic Values
+   DCpbind      -0.460794  kcal/mol.K
+   DHbind       19.395012  kcal/mol
+   DSbind        0.094182  kcal/mol.K
+    DSsol        0.125307  kcal/mol.K
+    DSrt        -0.008000  kcal/mol.K
+    DSconf      -0.023125  kcal/mol.K
+     DSbu->ex    0.023125  kcal/mol.K
+     DSex->u     0.000000  kcal/mol.K
+     DSbb        0.000000  kcal/mol.K
+   -TDSbind    -28.080354  kcal/mol
+   DGbind       -8.685341  kcal/mol
+   Ka           2.327e+06  1/M
+   Kd           4.298e-07  M
+
+Parameter Settings
+
+  1) Change sConf: current value = -23.125
+  2) Change temperature: current value =  25.000
+  3) Options for Sbb: current value = 1
+  4) Options for Sex->u: current value = 0
+  5) Run calculations
+  0) Exit program
+
+
+>> 

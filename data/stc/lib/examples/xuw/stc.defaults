@@ -1,0 +1,15 @@
+#
+# xuw run specific defaults
+#
+*sys_mode:    P_BIND
+*pdb1:        xuw_accept_4.pdb
+*pdb2:        xuw_cctnc.pdb 
+*pdb3:        xuw_emd.pdb	
+*acc1: 		
+*acc2: 		
+*acc3: 		
+*sconf_free1:
+*sconf_free2:
+*out_basic:
+*out_detail:
+*amino_def:   custom.amino.def

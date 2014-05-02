@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<TITLE>STC software download installation</TITLE>
+<META NAME="keywords" CONTENT="stc software download">
+</HEAD>
+
+<BODY>
+<H2> 
+<CENTER>
+Stc Software Setup
+</CENTER>
+</H2>
+<H3><B>Download
+<HR>
+</B></H3>
+<P>
+Select the version of stc corresponding to your operating system. 
+<P>
+<A href="http://www.bionmr.ualberta.ca/bds/software/download/stc-v5.3.0-build.tar">
+Unix (X11)</a> (12.0 MB) (includes sun, sgi, linux, and mac darwin)
+<BR>
+<A href="http://www.bionmr.ualberta.ca/bds/software/download/stc-v5.3.0.app.tar">
+Apple(Aqua)</a> (1.5 MB)
+<P>
+
+<H3><B>Installation and Startup
+<HR>
+</B></H3>
+<P>
+
+For the Apple(aqua) version, drag the <B>stc-v5.3.0.app</B> folder into
+<B>/Applications</B> and double click on <B>stc-v5.3.0</B> to start it.
+<P>
+
+For the X11 versions, you need to enter these commands:
+<OL>
+<LI> Untar the software if your browser has not already done so.
+<PRE>
+> tar xvf stc-v5.3.0-build.tar
+</PRE>
+<LI> Run the installation script (decide where to put the software
+eg, /usr/local). 
+<PRE>
+> cd stc-v5.3.0-build
+> ./Install
+</PRE>
+<LI> Update your home .cshrc file (or equivalent startup file).
+<PRE>
+> alias stc "wish /usr/local/stc-v5.3.0/bin/stc"
+</PRE>
+<LI> Start a new window and type "stc". If it works, remember to remove the
+stc-v5.3.0-build and stc-v5.3.0-build.tar files.
+</OL>
+
+<H3> Additional Notes and Troubleshooting
+<HR>
+</B></H3>
+<P>
+<OL>
+<LI><B> The STC window did not appear when i tried to start it.</B>
+<P>
+Perhaps your environment is not set up to find the tcl interpretter called
+'wish'.  Do you get the message "Command not found" when you type 'wish'?
+Mac users can install tcl/tk from <B>http://tcltkaqua.sourceforge.net/</B>,
+sgi users could go to http://freeware.sgi.com.
+
+<LI> You can also move stc to wherever you want (eg, /opt) but you then
+have to set the STC_HOME environment variable.
+<PRE>
+> setenv STC_HOME /opt/stc-v5.3.0
+> alias stc "wish /opt/stc-v5.3.0/bin/stc"
+</PRE>
+<LI>
+You should be able to run stc remotely but make sure you pass the
+"-X" flag to ssh which allows X11 forwarding.
+</OL>
+
+<P>
+<HR>
+<P>
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>

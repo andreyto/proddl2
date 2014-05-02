@@ -1,0 +1,57 @@
+
+<HTML>
+<HEAD>
+<TITLE>stc - Structural Thermodynamics Calculations</TITLE>
+<META NAME="keywords" CONTENT="free energy of binding, entropy, accessible surface area, stc, structural thermodynamics, pence">
+</HEAD>
+
+<body bgcolor=white text=black>
+
+<a name="howto">
+<H3> Unable to get stc to work? <HR></H3>
+
+Here are some of the problems/questions encountered so far in this
+version, please feel free to email the author if your problem is not
+described here.
+
+<OL>
+
+<LI>
+<PRE>
+*** Error, Unrecognized residue name:     577 S1  EMD     1     61.88000
+1.41900   0.21200      1.8000
+Define this residue in the amino.def file if vanderwaal assumptions are wrong
+
+or 
+
+Module.: get_rix_index
+Message: Cannot find '  ' in residue library.
+</PRE>
+One or more user pdb files contains an amino acid that STC does not
+recognize. The user must modify the <B>lib/amino.def</B> file and add the
+missing amino acids. Find this file in the stc installation and copy it to 
+your current directory. Make the changes and then specify this new file in
+the "Residue Library" field of the main stc window. An example of this type
+of scenario is presented in <B> lib/examples/xuw </B>.
+
+</OL>
+
+<P>
+<HR>
+<P>
+<a href="index.html">
+<img src="images/arrow.gif" border=0>
+Back to stc home page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

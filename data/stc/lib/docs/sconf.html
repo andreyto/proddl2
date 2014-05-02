@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<TITLE>stc - Calculating sConf</TITLE>
+</HEAD>
+
+<BODY>
+<H2>Stc - How to Calculate sConf</H2>
+
+Here is how sConf is calculated in the 
+<a href="images/thermo.jpg"> stc input window</a>. 
+<P>
+Although stc will calculate "sConf" automatically, the user has several options
+in determining how it is calculated. First note that calculating
+sConf for each residue is the summation of the individual entropy 
+components "dSbu->ex", "dSex->u", and "dSbb". dSbu->ex is calculated
+from the <a href="files/amino.def.html"> amino acid table </A>.
+dSex->u and dSbb are normally zero unless the user has specified 
+residue ID numbers for residues that remain unfolded. In this case,
+these components are taken from the 
+<a href="files/amino.def.html"> amino acid table </A>.
+<P>
+Some users have experimental values for dSbb or dSex->u. In this case
+an optional <a href="files/data.sconf.html"> sconf file </A>
+allows the user to specify values of dSbb and dSex->u for each residue.
+You must click the "calculate from datafile" button in order to use these values
+or "estimate" which weights the dSex->u values according to total sidechain
+ASA of the molecule. 
+
+<P>
+<HR>
+<P>
+<a href="index.html">
+<img src="images/arrow.gif" border=0>
+Back to main stc page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>

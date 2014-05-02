@@ -1,0 +1,33 @@
+
+Structural Thermodynamic Calculations Basic Results
+Date: Thu Mar 30 14:46:56 2006
+
+Accessible Surface Area (ASA)
+   Species      Polar ASA (Å2)    Nonpolar ASA (Å2)
+   -------      --------------    -----------------
+   Free-ligand         3221.98              4533.60
+   Bound-ligand        3101.98              4016.67
+   Free-enzyme          636.12              1319.53
+   Bound-enzyme         553.06               695.20
+
+Change in Accessible Surface Area (ASA)
+   Species     Polar DASA (Å2)   Nonpolar DASA (Å2)
+   -------     ---------------   ------------------
+   ligand               120.00               516.93
+   enzyme                83.06               624.33
+   ligand+enzyme        203.06              1141.26
+
+Thermodynamic Values
+   DCpbind      -0.460774  kcal/mol.K
+   DHbind       29.981067  kcal/mol
+   DSbind        0.131187  kcal/mol.K
+    DSsol        0.162307  kcal/mol.K
+    DSrt        -0.008000  kcal/mol.K
+    DSconf      -0.023120  kcal/mol.K
+     DSbu->ex    0.023120  kcal/mol.K
+     DSex->u     0.000000  kcal/mol.K
+     DSbb        0.000000  kcal/mol.K
+   -TDSbind    -36.096070  kcal/mol
+   DGbind       -6.115004  kcal/mol
+   Ka           7.199e+04  1/M
+   Kd           1.389e-05  M

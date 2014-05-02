@@ -1,0 +1,13 @@
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
+#
+#   See COPYING file distributed along with the PRODDL package for the
+#   copyright and license terms.
+#
+### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
+
+
+"""Package configuration constants generated at build time"""
+import numpy as np
+T_num = np.@T_NUM@
+prefix_env = "@PROJECT_NAME@"
+pkg_name = "@PY_PACKAGE_NAME@"

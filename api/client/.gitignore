@@ -1,0 +1,9 @@
+*.pyc
+*~
+*.swp
+*.egg
+*.egg-info/
+build/
+temp/
+distribute-*.gz
+setup.cfg

@@ -1,0 +1,11 @@
+
+This example shows how to use the batch button to process
+several pdb files (although only 3 in this case).
+
+When stc starts, press the "batch" button and then "calculate".
+All files with a '.pdb' suffix are processed, calculating ASA
+is done first and then thermodynamic calculations.
+
+Basic results are found in the '*.basic' output files,
+detailed results in '*.detail'.
+

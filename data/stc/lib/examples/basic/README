@@ -1,0 +1,17 @@
+
+This example is John Bagu and Pierre Lavigne's data as
+described in the stc paper.
+
+1) Click on "calc ASA" button.
+
+2) Press "calculate" button.
+    Done calculations, no errors.
+
+3) Click 'Display Results' and view accessible surface area file
+    'out.complex.acc' file or other files, Click "Dismiss" when done.
+
+4) Click "Thermodynamics" button
+
+5) Press "Calculate". Click "Histograms" to see charts for the various
+thermodynamic variables for ligand/enzyme. Click "Dismiss" when you
+are done viewing results.

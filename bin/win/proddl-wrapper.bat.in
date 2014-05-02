@@ -1,0 +1,32 @@
+@echo off
+REM Wrapper script that sets up the necessary environment
+REM and then executes the program that was passed to it
+REM as its argument.
+REM It adds its own directory and some subdirectories
+REM to the PATH, so the programs from those locations 
+REM can be passed as filenames without paths.
+set _this_dir=%~dp0
+set @PROJECT_NAME@_WRAPPER=%~f0
+set @PROJECT_NAME@_HOME=%_this_dir%\..
+set @PROJECT_NAME@_ROOT=%_this_dir%\..\..
+set @PROJECT_NAME@_CONF_DIR=%@PROJECT_NAME@_HOME%\config
+set @PROJECT_NAME@_CONFIG=%@PROJECT_NAME@_CONF_DIR%\@CONF_BASE@
+set @PROJECT_NAME@_DATA_DIR=%@PROJECT_NAME@_HOME%\@DATA_DIR_BASE@
+set @PROJECT_NAME@_TEST_DATA_DIR=%@PROJECT_NAME@_HOME%\@TEST_DATA_DIR_BASE@
+call %@PROJECT_NAME@_CONF_DIR%\@DEPS_RC_BASE@
+set _py_inst_dir=%@PROJECT_NAME@_HOME%\@PY_INSTALL_SUBDIR@
+PATH=%_this_dir%;%_py_inst_dir%;%PATH%
+set PYTHONPATH=%_py_inst_dir%;%PYTHONPATH%
+
+REM This should allow developing and testing of Python code
+REM in modules (but not in entry point scripts) without running
+REM build or install every time, assuming that everything else
+REM was ran through install before. Define the CMake variable
+REM at build time. Undefine for production build.
+
+if "@DEVEL_MODE@" == "1" (
+	set PYTHONPATH=@PY_SOURCE_PACKAGE_DIR@;%PYTHONPATH%
+)
+
+%*
+exit /b %errorlevel%

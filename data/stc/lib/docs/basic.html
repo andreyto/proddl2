@@ -1,0 +1,165 @@
+
+<HTML>
+<HEAD>
+<TITLE>stc - Structural Thermodynamics Calculations</TITLE>
+<META NAME="keywords" CONTENT="free energy of binding, entropy, accessible surface area, stc, structural thermodynamics, pence">
+</HEAD>
+
+<body bgcolor=white text=black>
+
+<a name="howto">
+<H3> How to use stc on a basic example <HR></H3>
+
+<OL>
+
+<P>
+<LI> Go to the stc installation directory and in <B> lib/examples </B>
+you will see a directory called <B> basic </B>. Copy this directory
+to your home directory. 
+
+<P>
+<LI>
+List the directory and you will see there are two structures,
+<A href="files/jrb.complex.pdb.html">jrb.complex.pdb</A> and
+<A href="files/jrb.free.pdb.html">jrb.free.pdb</a>
+Start the stc program by typing "stc".
+<PRE>
+> cd tutorial 
+> ls
+> stc
+</PRE>
+<P>
+<img src="images/main.jpg">
+<P>
+Note that the <B>system type</B> for our data is "binding". One could also choose
+"unfolding" or "oligomerization". Our examples library contains sample runs
+of these system types.
+<P>The <B>output directory</B> is where stc writes all the output files. The 
+<A href="files/amino.def.html">residue library</A> is where we define the amino acids, nucleotides, and
+parameters used in the calculations. Users with unique amino acids will
+need to create a customized residue library. The directory <B> lib/examples/xuw
+</B> is an example of this type of problem. 
+<P> The <B>Calc ASA</B> button allows one to calculate accessible surface
+area (ASA) output files. The <B>Thermodynamics</B> button lets the user
+make thermodynamic calculations based on the ASA files. <B>Batch</B> is
+a special case where the user wants ASA and thermodynamic calculations
+to be applied to several pdb data files. 
+
+<P>
+<LI> <B> Click on the "Calc ASA" button. </B>
+<P>
+<img src="images/asa.jpg">
+<P>
+Because our system type is binding, 
+we enter the bound complex pdb file and optionally enter
+the free ligand and free enzyme pdb files.
+<P>
+Note: If the system type was "oligomerization", we enter the bound
+oligomer pdb and an optional free monomer pdb. For the "unfolding"
+system type, you enter both the folded and unfolded pdb files.
+
+<UL>
+<P>
+<LI> <B> Click the "Calculate" button. </B>
+<P> 
+The program prints a number of messages to the screen telling you
+what it is doing. The final message should say "Done calculations,
+no errors".
+
+<P>
+<LI> <B> Click the "Display Results" button. </B>
+<P>
+<img src="images/asa.res.jpg">
+<P>
+A results window </A>
+is displayed which allows you to view the various output
+files. All accessible surface area output files have the ".acc"
+file suffix. The log file is important because it indicates all the
+steps and programs used to derive the ".acc" files and it indicates
+the nature of any errors. Here are examples of an
+<a href="files/out.ligand.acc.html"> acc </A> file and a
+<a href="files/stc.log.html"> log </A> file.
+When you are done, click on the  
+"Dismiss" buttons until you arrive back at the first stc window.
+</UL>
+
+<P>
+<LI> <B> Click the "Thermodynamics" button. </B>
+<P>
+<img src="images/thermo.jpg">
+<P>
+In this window we make thermodynamics calculations </A>
+based on accessible surface
+area files. Note that stc fills in the "ASA file" fields 
+but the user can create or edit his/her own.  The other fields are
+set such that stc calculates sConf in a reasonable way.
+If you want to change
+how stc calculates sConf from the default method, see
+<a href="sconf.html"> calculating sConf</A>.
+
+<P>
+<LI> <B> Click the "Calculate" button. </B>
+<P>
+<img src="images/basic.jpg">
+<P>
+The program displays a 
+<a href="files/out.basic.html"> basic output file </A>
+of various binding constants and
+other key variables. If you click on the 
+<a href="files/out.detail.html"> detailed output file </A>
+you can see thermodynamic output on specific atoms or residues.
+Here is where you can study the individual atom differences,
+the classification of polar/nonpolar atoms, a residue by
+residue summary in the calculation of sconf (including the
+change in ASA for total polar and non-polar atoms) and
+the calculation of themodynamic paramaters per residue.
+<P>
+<LI> <B> Click the "Histograms" button. </B>
+<P>
+<img src="images/histo.jpg">
+<P>
+Finally, in order to analyze this output more easily, you can
+click on the "Histograms" button where you can receive graphical
+displays of the  
+key thermodynamic indicators 
+residue by resiude. Clicking on the radio button automatically
+draws the requested histogram. 
+
+<P>
+Notes: <I>Unfortunately I am not able to
+have the histogram redraw automatically when you resize the window,
+thus i have a "fit to window" button which does it. I'm sure with
+a bit of patience, this could be eliminated. Another bug is that
+the histogram does not know what to do when the residue Ids are
+not unique. Probably a future version of this software will have
+options to select the appropriate chain.
+</I>
+<P>
+<LI> <B> Click the "Save Postscript". </B>
+<P>
+Creates a postscript file of the plot. Remember that you have control
+of the colors, titles, line widths, tics, of your histogram through the 
+<a href="stcDefaults.html"> stcDefaults </A> file and that you have
+the ability to re-locate any text via click/drag. 
+
+</OL>
+
+<P>
+<HR>
+<P>
+<a href="index.html">
+<img src="images/arrow.gif" border=0>
+Back to stc home page</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
+

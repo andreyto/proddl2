@@ -1,0 +1,19 @@
+
+Xu Wang STC run
+This example demonstrates the use of a custom built amino.def file for
+the EMD residue.
+
+1) Note that I have used the "stc.defaults" file to set the
+"Residue Library" to "custom.amino.def".  Look at
+this file to see how we added the EMD entity. 
+
+2) Click on "calc ASA" button.
+
+3) Press "calculate" button.
+    Done calculations, no errors. 
+
+4) Click "Dismiss" if you are interested in viewing these intermediate files.
+
+5) Click "Thermodynamics" button.
+
+6) Press "Calculate". Click "Dismiss" when you are done viewing results.

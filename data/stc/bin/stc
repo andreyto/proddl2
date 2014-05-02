@@ -1,0 +1,6 @@
+#!/bin/csh
+#
+# stc startup script 
+#
+setenv STC_HOME /home/andrey/app/stc-v5.3.0
+wish $STC_HOME/tcl/main.tcl

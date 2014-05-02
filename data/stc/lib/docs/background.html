@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+<TITLE>stc background</TITLE>
+</HEAD>
+
+<BODY>
+<CENTER>
+<H2> Stc Background </H2>
+</CENTER>
+<LI> <a href="#copy"> Copyright Notice / References </A>
+<LI> <a href="#agree"> User Agreement </A>
+<LI> <a href="#ack"> Acknowledgements </A>
+<LI> <a href="#history"> Project History </A>
+<P><HR><P>
+
+<a name="copy">
+<H3> Copyright Notice / References</H3>
+
+stc Copyright (C) 1999<BR> 
+Lavigne, P., J.R. Bagu, R. Boyko, L. Willard, C.F.B. Holmes and B.D. Sykes.<BR>
+Department of Biochemistry<BR>
+University of Alberta<BR>
+Edmonton, Alberta, Canada<BR>
+T6G 2H7<BR>
+<A HREF="mailto:pierre.lavigne@courrier.usherb.ca">pierre.lavigne@courrier.usherb.ca</A><BR>
+<A HREF="mailto:brian.sykes@ualberta.ca">brian.sykes@ualberta.ca</A><BR>
+</P>
+
+No portion of this program may be  incorporated  into  other
+programs  or sold for profit without express written consent
+of the authors.
+<P>
+The reference paper which introduces the stc software:
+<PRE>
+	Lavigne, P., J.R. Bagu, R. Boyko, L. Willard, C.F.B. Holmes and B.D. Sykes.
+	Structure-based thermodynamic analysis of the dissociation of protein
+	phosphatase-1 catalytic subunit and microcystin-LR docked complexes.
+	Protein Science 9:252-264 (2000).
+</PRE>
+<P><HR><P>
+
+<a name="agree">
+<H3>User Agreement</H3>
+
+<P>The recipient of the stc software<SUP>&dagger;</SUP> package agrees to the following:<P>
+
+<OL TYPE="1">
+
+<LI>Title and ownership rights to this Software and any derivatives of it
+   remain solely with the Dept. of Biochemistry at the University of Alberta.
+   The Software or any of its derivatives may not be sold, tendered or 
+   traded for profit by the recipient.</LI>
+
+<LI>Any results of significant scientific merit obtained through the use of
+   this product must acknowledge the stc Software package and its authors.
+   (See above.)</LI>
+
+</OL>
+
+<P><SUP>&dagger;</SUP>The term ``Software'' herein shall mean all computer programs, recompiled 
+   versions of these programs, derivative works, support material, 
+   documentation, manuals and databases pertaining to the stc package.</P>
+
+
+<P> <HR><P>
+<a name="ack">
+<H3> Acknowledgements</H3>
+
+<P>
+Thanks to 
+<B> Pascal Mercier
+</B>
+who did an extensive test of stc
+4.2 and provided many helpful suggestions.
+Thanks to <B>Fred Richards</B> and <B>T.J.Richmond</B>, 
+whose accessible surface area fortran software
+is still used in stc. <B>William Wilcox</B> also did modifications on the
+addradii subroutine. The work of
+<B>K.P. Murphy</B> and <B>E. Freire</B> forms the basis for the thermodynamics
+programming section.
+
+<I>
+Thermodynamics of structural stability and cooperative folding behavior
+in proteins.
+Adv Protein Chem. 1992;43:313-61.
+</I>
+
+<P> <HR><P>
+<a name="history">
+<H3> Project History </H3>
+<P>
+
+STC was first being formulated in 1996 when John Bagu began to
+consider how thermodynamic analysis of the dissociation of protein
+phosphatase-1 catalytic subunit and microcystin-LR docked complexes
+could be done. Teaming up with Pierre Lavigne who had exceptional
+interest in structural thermodynamics, they formulated a plan which could use 
+a number of the routines already accessed/modified in the
+software package <a href="http://www.bionmr.ualberta.ca/bds/software/vadar"> vadar </A>.
+<P>
+When I (Robert) heard of these researchers' ideas I offered to write the
+straight forward thermodynamics section of the project.
+The interactive c program 'thermo" was written in a couple weeks
+and when combined with  
+the accessible surface area routines, it appeared to work
+quite well on John's data. To finish up vadar, I then offered to
+write a second version  which used a simple <a href="tcl.html"> tcl 
+</A> interface to gather the
+input for thermo and display the output. With the gui, stc (which it
+was now called) became a magnitude easier to use. 
+<P>
+<A HREF="images/stc-v2.2.jpg">
+<IMG src="images/stc-v2.2.thumb">
+</A>
+<P>
+The microcystin paper was published in 2000. Pierre always believed the 
+software had ramnifications which far exceeded the original purpose of the
+work. However, with a small user base and a grant to further develop
+the software being turned down, stc was in maintenance mode. Two versions
+followed, both were small changes. Histograms were added in version 4.
+<P>
+In Nov 2003, I received two more emails regarding transition of stc to nucleic acids
+and Pierre
+happened to be visiting at this time. Somehow these events all conspired
+to make me promise to do something about the state of stc. Once I got
+started, I couldn't seem to stop as witnessed by the v5.0 release notes.
+<P>
+Mar 2006: After a couple years, it was time to go through my bug list,
+update the documentation and add a gui for batch processing. This 
+eventually led to version 5.3.
+<P>
+<P><HR><P>
+<a href="http://www.bionmr.ualberta.ca/bds/software/stc/latest/index.html">
+<img src="images/arrow.gif" border=0>
+Back to stc home</a><P>
+<font size="-1">
+<I>
+This file last updated:
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide >
+document.write(document.lastModified)
+// unhide -->
+</SCRIPT></I>
+<ADDRESS> Questions to: <A HREF="mailto:bionmr@biochem.ualberta.ca">
+bionmr@biochem.ualberta.ca </A></ADDRESS>
+</font>
+</BODY>
