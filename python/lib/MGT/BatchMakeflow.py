@@ -1,19 +1,34 @@
 """Classes for generating Makeflow inputs"""
+from __future__ import unicode_literals
+from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
 
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
+from builtins import *
+from builtins import object
 from MGT.MakeflowArgParser import parse_makeflow_args, unparse_makeflow_args
-from PRODDL.util import make_executable, is_string
+from MGT.UUID import genId
+from MICGENT.util import make_executable, is_string
 
 from contextlib import contextmanager, closing
 import os
 import subprocess
+import shutil
 from subprocess import check_call
 
+def _makeflow_task_update_targets(targets,cwd=None):
+    if cwd:
+        targets = [ os.path.join(cwd,x) if not os.path.isabs(x) else x for x in targets ]
+    return targets
 
 class MakeflowWriter(object):
 
     _tab = " "*4
     
-    def __init__(self,out,vars=None,exports=None,mode="w"):
+    def __init__(self,out,vars=None,exports=None,wrapper=None,env=None,mode="w"):
         if is_string(out):
             self.out = open(out,mode)
             #do not repeat default exports on append -
@@ -30,6 +45,8 @@ class MakeflowWriter(object):
         self._write_vars(vars,0)
         #store IDs of already processed MGT jobs to avoid submitting any job twice
         self.done = set()
+        self.wrapper = wrapper
+        self.env = env
     
     @classmethod
     def getStandardExports(klass):
@@ -53,16 +70,85 @@ class MakeflowWriter(object):
         for var in vars:
             w(self._tab*tab_level+"{}\n".format(var))
     
-    def task(self,cmd,targets=[],inputs=[],
+    def task(self,cmd=None,targets=[],inputs=[],
             vars=None,
-            is_local=False):
-        """\\@BATCH_LOCAL=0 is vars has precedence over is_local=True
+            is_local=False,
+            cwd=None,
+            status_file=None,
+            stdout=None,
+            stderr=None,
+            id_task=None,
+            wrapper=None,
+            env=None,
+            cwd_remove_before=None,
+            conf=None):
+        """
+        @cmd command to execute; if cmd is None, conf must be a dict that has 
+        a key cmd
+        @param cwd if not None, use cd to change to this directory before 
+        running command.
+        Note that this does not affect cwd when the job is submitted.
+        @param status_file if not None, try to remove this file before
+        running command and write '1' to it after finishing the command
+        with zero exit code. File manipulation will be done from a directory
+        that is current before changing to cwd, so if you want the file to
+        be created under cwd, pass status_file=cwd/some_name.
+        @note \\@BATCH_LOCAL=0 in vars has precedence over is_local=True
         any None values in targets or inputs will be ignored"""
+
+        assert cmd or (conf and "cmd" in conf), "cmd must be defined"
+
+        if not cmd:
+            cmd = conf["cmd"]
+        if not targets:
+            targets = conf.get("targets",[])
+        if not inputs:
+            inputs = conf.get("inputs",[])
+        if not cwd:
+            cwd = conf.get("cwd",None)
+        if not status_file:
+            status_file = conf.get("status_file",None)
+        if not stdout:
+            stdout = conf.get("stdout",None)
+        if not stderr:
+            stderr = conf.get("stderr",None)
+        if not id_task:
+            id_task = conf.get("id_task",None)
+        if cwd_remove_before is None:
+            cwd_remove_before = conf.get("cwd_remove_before",None)
+
+        if cwd_remove_before is None:
+            cwd_remove_before = False
+
+        #Makeflow breaks down with cryptic messages if : is present
+        #in the command line (it thinks it is another rule header)
+        cmd = cmd.replace(":",r"\:")
+        cmd = cmd.replace("=",r"\=")
+        cmd = cmd.replace("\\\n","")
+        cmd = cmd.replace("\n","; ")
+        
+        if wrapper is None:
+            wrapper = self.wrapper
+
+        if env is None:
+            env = self.env
+        
         w = self.out.write
+
+        if targets is None or is_string(targets):
+            targets = [ targets ]
+        if inputs is None or is_string(inputs):
+            inputs = [ inputs ]
         
         targets = [ x for x in targets if x is not None ]
+        targets = _makeflow_task_update_targets(targets,cwd)
+        
         inputs = [ x for x in inputs if x is not None ]
         
+        if status_file is not None:
+            assert status_file and not os.path.isdir(status_file)
+            targets.append(status_file)
+
         w(' '.join([str(t) for t in targets])+": "+\
                 ' '.join([str(t) for t in inputs])+'\n')
         
@@ -77,6 +163,53 @@ class MakeflowWriter(object):
                 vars = vars + ["@BATCH_LOCAL=1"]
         
         self._write_vars(vars,1)
+        
+        if wrapper is not None:
+            wrapper = str(wrapper).strip()
+            if(wrapper):
+                cmd = "{} {}".format(wrapper,cmd)
+        
+        cmd = cmd.strip()
+        
+        if env is not None:
+            env = str(env).strip()
+            if(env):
+                cmd = "source '{}'; ({})".format(env,cmd)
+
+        if stdout is None:
+            if id_task is None:
+                id_task = genId()
+            if cwd is not None:
+                stdout = "{}/{}.task_out".format(cwd,id_task)
+            else:
+                stdout = "{}.task_out".format(id_task)
+        
+        if stderr is None:
+            if id_task is None:
+                id_task = genId()
+            if cwd is not None:
+                stderr = "{}/{}.task_err".format(cwd,id_task)
+            else:
+                stderr = "{}.task_err".format(id_task)
+        
+        redir = ""
+        
+        if stdout != "-":
+            redir += " 1> '{}'".format(stdout)
+        if stderr != "-":
+            redir += " 2> '{}'".format(stderr)
+        
+        if redir:
+            cmd = "({cmd}){redir}".format(cmd=cmd,redir=redir)
+
+        if cwd is not None:
+            cmd = "mkdir -p '{}'; pushd '{}' && ({}) && popd".format(cwd,cwd,cmd)
+            if cwd_remove_before:
+                cmd = "rm -rf '{}'; {}".format(cwd,cmd)
+        
+        if status_file is not None:
+            cmd = "rm -f '{status_file}' && ({cmd}) && (echo 1 > '{status_file}')".\
+                    format(status_file=status_file,cmd=cmd)
         
         w(self._tab+"{}\n\n".format(cmd))
 
@@ -94,7 +227,7 @@ class MakeflowWriter(object):
                 vars=vars,
                 is_local=True)
 
-        appendMakeflow = sub
+    appendMakeflow = sub
 
     def appendMgtJob(self,job):
         """Append to current makeflow one MGTAXA job object.
@@ -128,6 +261,23 @@ class MakeflowWriter(object):
             self.out.close()
             self.out = None
 
+def make_task_sandbox(top_dir,id_task=None,conf={}):
+    conf = conf.copy()
+    if id_task is None or id_task == "":
+        id_task = conf.get("id_task",None)
+    if id_task is None or id_task == "":
+        id_task = genId()
+    cwd = os.path.join(top_dir,id_task)
+    shutil.rmtree(cwd,ignore_errors=True)
+    os.makedirs(cwd)
+    file_root = os.path.join(cwd,id_task)
+    conf.setdefault("status_file",file_root+".workflow_status")
+    conf.setdefault("stdout",file_root+".task_out")
+    conf.setdefault("stderr",file_root+".task_err")
+    conf.setdefault("cwd",cwd)
+    conf.setdefault("id_task",id_task)
+    return conf
+
 def writeMakeflowRunScript(
         makeflow_bin,
         workflow,
@@ -139,7 +289,8 @@ def writeMakeflowRunScript(
         mode="w",
         stdout="-",
         stderr="-",
-        quiet=False
+        quiet=False,
+        script_prolog=""
         ):
     """Write a shell script that will run this makeflow.
     @param makeflow_bin Makeflow executable path
@@ -153,7 +304,10 @@ def writeMakeflowRunScript(
     '-' (default) means no redirection; None means $workflow.out.log
     @param stderr redirect Makeflow standard error to that file;
     '-' (default) means no redirection; None means $workflow.err.log
-    @param quiet minimize chatter from script [False]"""
+    @param quiet minimize chatter from script [False]
+    @param script_prolog Insert this string of commands at the
+    beginning of the run script (to perform cleanup, for example).
+    This is inserted after the `env` component."""
     out_close = False
     if is_string(out):
         out = open(out,mode)
@@ -162,6 +316,8 @@ def writeMakeflowRunScript(
     w("#!/bin/bash\n")
     if env is not None:
         w(". {}\n".format(env))
+    if script_prolog is not None:
+        w("{}\n".format(script_prolog))
     for var in vars:
         w("export {}\n".format(var))
     if stdout is None:
@@ -205,11 +361,13 @@ def writeMakeflowRunScript(
     if out_close:
         out.close()
 
+##TODO: see how to pass vars and exports to MakeflowWriter ctor
 @contextmanager
 def makeflow(
-        makeflow_bin,
-        wrapper,
         workflow,
+        makeflow_bin="makeflow",
+        env=None,
+        wrapper=None,
         makeflow_args="",
         workflow_script=None,
         web=False,
@@ -225,7 +383,7 @@ def makeflow(
     if os.path.isfile(makeflowLog):
         os.remove(makeflowLog)
     workflow_work = workflow+".tmp"
-    with closing(MakeflowWriter(workflow_work)) as mkw:
+    with closing(MakeflowWriter(workflow_work,wrapper=wrapper,env=env)) as mkw:
         
         ## the calling code writes Makeflow tasks
         yield mkw
@@ -252,15 +410,26 @@ def makeflow(
         else:
             mkf_stdout = "-"
             mkf_stderr = "-"
+        script_prolog = ""
+        if mkf_opt.batch_type is not None:
+            # In case the user copied a prior run dir,
+            # the existing Makeflow's file torque.wrapper will not be updated
+            # by Makeflow, and direct job status output into the previous
+            # directory. Makeflow will never see completion of any job as a result.
+            # We remove any such files here.
+            script_prolog += "rm -f {}.wrapper".format(mkf_opt.batch_type)
         writeMakeflowRunScript(
                 makeflow_bin = makeflow_bin,
                 workflow = workflow,
+                env = env,
+                wrapper = wrapper,
                 vars = mkf_vars,
                 args = mkf_args_new,
                 out = workflow_script,
                 stdout = mkf_stdout,
                 stderr = mkf_stderr,
-                quiet = True if web else False
+                quiet = True if web else False,
+                script_prolog = script_prolog
                 )
         make_executable(workflow_script)
     os.rename(workflow_work,workflow)
