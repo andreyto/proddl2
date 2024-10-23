@@ -5,7 +5,7 @@ This is a protein-protein docking package. Its main operation is to accept 3D st
 of two proteins that are known to interact and generate several models of their
 3D complex.
 
-This package incorporates codes originally developed by the author while working 
+This package incorporates approaches originally developed by the author while working 
 on a docking software GRAMM-X. 
 
 The architecture has been redesigned for better portability and parallel execution 
