@@ -16,6 +16,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 message("CMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}")
 
 if(CMAKE_COMPILER_IS_GNUCXX)
+    #set(CMAKE_CXX_FLAGS "-g -fpermissive -std=c++11 ${CMAKE_CXX_FLAGS}")
     set(CMAKE_CXX_FLAGS "-g -std=c++11 ${CMAKE_CXX_FLAGS}")
     message("CMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}")
     message("CMAKE_CXX_FLAGS_RELEASE=${CMAKE_CXX_FLAGS_RELEASE}")
@@ -48,7 +49,7 @@ endif()
 set(T_NUM "double" CACHE STRING "C datatype for real numbers")
 add_definitions(-DPRODDL_T_NUM=${T_NUM})
 
-find_package( HDF5 REQUIRED )
+find_package( HDF5 REQUIRED C )
 find_package( Blitz++ REQUIRED )
 #something is wrong with Blitz lib on Windows - symbols reported
 #as duplicate with C run-time lib. Lib is only needed if BZ_DEBUG is defined

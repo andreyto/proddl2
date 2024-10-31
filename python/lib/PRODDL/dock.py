@@ -5,10 +5,10 @@
 #
 ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
 
-import resources
-import conf_io
-import util
-import force_field_fft
+from . import resources
+from . import conf_io
+from . import util
+from . import force_field_fft
 
 from MGT.BatchMakeflow import makeflow
 
@@ -65,7 +65,7 @@ def dock(
                 cmd=cmd,
                 targets=[molforce_file],
                 inputs=[receptor_pdb,ligand_pdb,options],
-                is_local=True
+                is_local=False
                 )
 
         opt_scan = opt["scan"]
@@ -88,7 +88,7 @@ def dock(
 
         scan_res_files = []
         
-        for start_scan in xrange(0,n_ang,n_ang_scan):
+        for start_scan in range(0,n_ang,n_ang_scan):
             
             end_scan = min(start_scan+n_ang_scan,n_ang)
             scan_res_file = "scan_res.{:04}-{:04}.dat".format(start_scan,end_scan)
@@ -129,7 +129,7 @@ def dock(
                 cmd=cmd,
                 targets=[res_file],
                 inputs=[molforce_file,scan_opt_file,rot_scan_list]+scan_res_files,
-                is_local=True
+                is_local=False
                 )
 
         cmd = """\
@@ -148,7 +148,7 @@ def dock(
                 cmd=cmd,
                 targets=[model_pdb],
                 inputs=[res_file,receptor_pdb,ligand_pdb],
-                is_local=True
+                is_local=False
                 )
 
 def main():

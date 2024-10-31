@@ -29,7 +29,6 @@ if(NOT DEFINED HDF5_C_LIBRARIES)
     set(HDF5_C_LIBRARIES ${HDF5_LIBRARIES})
 endif()
 find_package( Blitz++ REQUIRED )
-include_directories(HDF5_INCLUDE_DIRS)
 
 find_package( Boost REQUIRED COMPONENTS filesystem system iostreams program_options unit_test_framework)
 
@@ -37,9 +36,11 @@ set(libs ${Boost_LIBRARIES} ${HDF5_LIBRARIES} ${Blitz_LIBRARIES})
 
 add_library(bob_io ${bob_io_sources})
 target_link_libraries(bob_io ${libs})
+target_include_directories(bob_io PRIVATE ${HDF5_INCLUDE_DIRS})
 
 add_executable(test_hdf5 src/test/hdf5.cc)
 target_link_libraries(test_hdf5 bob_io ${libs})
+target_include_directories(test_hdf5 PRIVATE ${HDF5_INCLUDE_DIRS})
 
 MESSAGE("HDF5_C_LIBRARIES=${HDF5_C_LIBRARIES}")
 MESSAGE("HDF5_FOUND=${HDF5_FOUND}")
@@ -47,4 +48,4 @@ MESSAGE("HDF5_LIBRARIES=${HDF5_LIBRARIES}")
 
 add_test(NAME test_hdf5 COMMAND test_hdf5)
 
-set(BOB_IO_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/include CACHE INTERNAL "Bob IO include dirs")
+set(BOB_IO_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/include ${HDF5_INCLUDE_DIRS} CACHE INTERNAL "Bob IO include dirs")

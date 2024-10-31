@@ -5,10 +5,10 @@
 #
 ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
 
-import config
-import conf_io
-import util
-import imp.force_field_fft
+from . import config
+from . import conf_io
+from . import util
+from .imp import force_field_fft
 
 import argh
 from argh import arg
@@ -45,7 +45,7 @@ def write_molforce(
     alpha = []
 
     ind_at = 0
-    for mol_name, recs_mol in it.groupby(imp.force_field_fft.extract_molforce((receptor_pdb,ligand_pdb)),
+    for mol_name, recs_mol in it.groupby(force_field_fft.extract_molforce((receptor_pdb,ligand_pdb)),
                            lambda rec: rec["mol_name"]):
         ind_at_start = ind_at
         for rec in recs_mol:

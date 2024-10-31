@@ -32,5 +32,6 @@ if [[ "@DEVEL_MODE@" == "1" ]]; then
 	export PYTHONPATH="@PY_SOURCE_PACKAGE_DIR@":$PYTHONPATH
 fi
 
+set -x
 exec "$@"
 

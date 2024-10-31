@@ -19,21 +19,21 @@ def makedir(path):
 
 
 def urljoin_path(base,url):
-    import urlparse
+    import urllib.parse
     #urlparse.urljoin is weird: 
     #In [6]: urljoin(urljoin("/","static/PRODDL"),"jbrowse")
     #Out[6]: '/static/jbrowse'
     if not base.endswith(":"):
         if not base.endswith("/"):
             base += "/"
-    return urlparse.urljoin(base,url)
+    return urllib.parse.urljoin(base,url)
 
 def to_url_params(params):
     """You might have to pass OrderedDict if the order of parameters
     is important. Alternatively, urllib.quote_plus can be applied
     directly to a string."""
-    import urllib
-    return urllib.urlencode(params)
+    import urllib.request, urllib.parse, urllib.error
+    return urllib.parse.urlencode(params)
 
 def add_to_path(dir,var="PATH",prepend=False,env=None):
     """Add a directory to the PATH environment variable"""
@@ -107,9 +107,9 @@ def none_from_str(s):
 
 #will have to become isinstance(x,str) in Python 3
 def is_string(x):
-    return isinstance(x,basestring)
+    return isinstance(x,str)
 
 def make_executable(file_name):
     """Set executable permission bit"""
-    os.chmod(file_name,os.stat(file_name).st_mode|0755)
+    os.chmod(file_name,os.stat(file_name).st_mode|0o755)
 

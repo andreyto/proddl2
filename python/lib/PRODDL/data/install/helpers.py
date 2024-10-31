@@ -40,7 +40,7 @@ if __name__ == "__main__":
     try:
         action = sys.argv[1]
     except IndexError:
-        print "Usage: %s action [args]" % (os.path.basename(sys.argv[0]),)
+        print("Usage: %s action [args]" % (os.path.basename(sys.argv[0]),))
         sys.exit(1)
 
     assert action in ("gen-rc",)
@@ -60,9 +60,9 @@ if __name__ == "__main__":
             PYTHONPATH = os.environ.get("PYTHONPATH","")
             with open(rc,"w") as out:
                 if not is_in_path(target,sys.path):
-                    print >> out, "export PYTHONPATH={0}{1}$PYTHONPATH".format(target,os.pathsep)
+                    print("export PYTHONPATH={0}{1}$PYTHONPATH".format(target,os.pathsep), file=out)
                 if not is_in_path(target,PATH):
-                    print >> out, "export PATH={0}{1}$PATH".format(target,os.pathsep)
-                print >> out, "export {0}_CONF={1}".format(pkg_name,
-                        os.path.join(target,pkg_name+conf_ext))
+                    print("export PATH={0}{1}$PATH".format(target,os.pathsep), file=out)
+                print("export {0}_CONF={1}".format(pkg_name,
+                        os.path.join(target,pkg_name+conf_ext)), file=out)
 

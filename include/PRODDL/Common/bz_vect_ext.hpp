@@ -12,6 +12,7 @@
 // Some extensions for handling vectors in space in Blitz:
 // e.g. norm of vector
 
+#include <limits> // Blitz still include limits.h but uses std::
 #include <blitz/array.h>
 #include <blitz/tinyvec2.h>
 

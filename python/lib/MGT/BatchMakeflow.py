@@ -1,8 +1,8 @@
 """Classes for generating Makeflow inputs"""
-from __future__ import unicode_literals
-from __future__ import print_function
-from __future__ import division
-from __future__ import absolute_import
+
+
+
+
 
 from future import standard_library
 standard_library.install_aliases()
@@ -11,7 +11,7 @@ from builtins import *
 from builtins import object
 from MGT.MakeflowArgParser import parse_makeflow_args, unparse_makeflow_args
 from MGT.UUID import genId
-from MICGENT.util import make_executable, is_string
+from MGT.util import make_executable, is_string
 
 from contextlib import contextmanager, closing
 import os
@@ -95,6 +95,9 @@ class MakeflowWriter(object):
         be created under cwd, pass status_file=cwd/some_name.
         @note \\@BATCH_LOCAL=0 in vars has precedence over is_local=True
         any None values in targets or inputs will be ignored"""
+
+        if conf is None:
+            conf = {}
 
         assert cmd or (conf and "cmd" in conf), "cmd must be defined"
 

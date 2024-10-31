@@ -16,6 +16,7 @@
 //inherit from original Blitz class because Blitz/geometry.h
 //is undocumented.
 
+#include <limits> //for blitz/funcs which use std:: but include limits.h
 #include <blitz/tinyvec2.h>
 //#include <blitz/applics.h> //for pow()
 #include <blitz/funcs.h> //for pow()

@@ -80,8 +80,12 @@ PRODDL dependencies.
 
 On Linux, we used GCC (>4.7.0). On Windows, we used Visual Studio 2010 in 32 bit mode.
 
-After you have configured the dependencies, use sample commands for configuring, building and installing 
-PRODDL from `config/linux/build.sh` and `config/win/build.bat`
+After you have configured the dependencies, create an empty build directory 
+**outside** of the source tree, make it your current working directory  and 
+use sample commands for configuring, building and installing 
+PRODDL from `config/linux/build.sh` and `config/win/build.bat`.
+
+You will need to define the environment variables referenced in the build scripts.
 
 After successfully building **and** installing PRODDL, run `ctest` in the build directory 
 to execute the unit tests. 

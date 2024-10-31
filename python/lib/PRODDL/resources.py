@@ -7,7 +7,7 @@
 
 
 """Configuration and resources of this package"""
-import config
+from . import config
 from pkg_resources import Requirement, resource_filename, resource_string
 import os, sys
 

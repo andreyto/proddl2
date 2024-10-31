@@ -7,9 +7,9 @@
 
 """Methods for loading config files"""
 
-import resources
-import json_conf
-import util
+from . import resources
+from . import json_conf
+from . import util
 import os
 
 def load_config_standard_vars(config_file=None,

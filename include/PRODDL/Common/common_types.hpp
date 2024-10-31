@@ -17,9 +17,10 @@
 // the undelying type in this file with minimal changes to other code, for
 // instance, go from blitz::TinyVector to Pooma.
 
+#include <limits>
+#include <blitz/array.h>
 #include <blitz/tinyvec2.h>
 #include <blitz/tinymat2.h>
-#include <blitz/array.h>
 
 #include <vector>
 

@@ -7,7 +7,7 @@
 
 from PRODDL import resources, conf_io
 import pytest
-from subprocess import check_call
+from subprocess import check_call, CalledProcessError
 import os, glob
 from os.path import join as pjoin
 
@@ -41,8 +41,8 @@ def no_test_molforce():
                        molforce_file=molforce_file,
                        pdb_inp_rec=pdb_inp_rec,
                        pdb_inp_lig=pdb_inp_lig)
-    print "opt=",opt
-    print "Executing command: {}".format(cmd)
+    print("opt=",opt)
+    print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
 def no_test_c_fft_scan_slave():
@@ -63,7 +63,7 @@ def no_test_c_fft_scan_slave():
                scan_opt_file=scan_opt_file,
                scan_res_file=scan_res_file
                )
-    print "Executing command: {}".format(cmd)
+    print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
 def no_test_c_fft_scan_master():
@@ -85,7 +85,7 @@ def no_test_c_fft_scan_master():
                rot_scan_list=rot_scan_list,
                res_file=res_file
                )
-    print "Executing command: {}".format(cmd)
+    print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
 def no_test_c_export():
@@ -109,7 +109,7 @@ def no_test_c_export():
                pdb_inp_lig=pdb_inp_lig,
                export_pdb_file=export_pdb_file
                )
-    print "Executing command: {}".format(cmd)
+    print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
 def test_dock():
@@ -123,6 +123,16 @@ def test_dock():
     --makeflow-args "-T local" \
     --test-mode 
     """.format(**globals())
-    print "Executing command: {}".format(cmd)
+    print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
+    assert os.path.exists("{export_pdb_file}".format(**globals())),"Output PDB not created"
+
+def test_wrapper_passes_error_back():
+    cmd = """\
+    {wrapper} \
+    ls this_file_does_not_exits \
+    """.format(**globals())
+    print("Executing command: {}".format(cmd))
+    with pytest.raises(CalledProcessError):
+        check_call(cmd,shell=True)
 

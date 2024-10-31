@@ -47,13 +47,13 @@ def extract_molforce(pdb_files):
         atoms = IMP.atom.get_by_type(prot, IMP.atom.ATOM_TYPE)
 
         for atom_p in atoms:
-            atom = atom_p.get_as_atom()
+            atom = IMP.atom.Atom(atom_p)
             yield dict(
                  file_name=pdb_file,
                  mol_name=pdb_file,
                  eps=ff.get_epsilon(atom),
                  rad=ff.get_radius(atom),
-                 xyz=atom.get_as_xyz().get_coordinates(),
-                 mass=atom.get_as_mass().get_mass()
+                 xyz=IMP.core.XYZ(atom_p).get_coordinates(),
+                 mass=IMP.atom.Mass(atom_p).get_mass()
                  )
 

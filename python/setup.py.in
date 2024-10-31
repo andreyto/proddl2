@@ -22,7 +22,7 @@ from fnmatch import fnmatch
 
 if len(sys.argv) >= 2 and sys.argv[-1] == "test" and sys.argv[-2] == "setup.py":
 
-    print "Modifying path for testing"
+    print("Modifying path for testing")
 
     test_inst_dir = os.path.abspath(os.path.join("test_run","install"))
     if not os.path.exists(test_inst_dir):
@@ -38,8 +38,8 @@ if len(sys.argv) >= 2 and sys.argv[-1] == "test" and sys.argv[-2] == "setup.py":
     sys.argv = sys.argv[:pos_test]+["develop","--install-dir",test_inst_dir]+sys.argv[pos_test:]
 
 #activate 'distribute', installing it if necessary
-from distribute_setup import use_setuptools
-use_setuptools()
+#from distribute_setup import use_setuptools
+#use_setuptools()
 
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
@@ -94,7 +94,7 @@ setup(
     package_dir = {'':pkg_subdir},
     #argh is used to auto-generate command line argument 
     #processing in entry points
-    install_requires = ['argh','argcomplete','h5py','numpy>=1.8.0','pytest'],
+    install_requires = ['future','argh','argcomplete','h5py','numpy>=1.8.0','pytest'],
 	#install_requires = ['argh','argcomplete','biopython>=1.61'],
 	#this will install pytest module
     tests_require=['pytest'],

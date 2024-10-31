@@ -22,7 +22,7 @@ def json_quote(x):
 def load_config_json(config_file,variables={}):
     with open(config_file,'r') as f:
         text = f.read()
-        for key, val in variables.items():
+        for key, val in list(variables.items()):
             patt = "${"+str(key)+"}"
             text = text.replace(patt,json_quote(val))
         return json.loads(text)

@@ -6,7 +6,7 @@
 //### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ##
 //
 //
-
+#include <blitz/array.h>
 #include "PRODDL/docking.hpp"
 #include "gtest/gtest.h"
 
