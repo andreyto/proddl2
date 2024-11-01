@@ -73,7 +73,7 @@ protected:
 
 
 template < class HandlerClass >
-class SlaveDispatcher : public Dispatcher<HandlerClass> {
+class WorkerDispatcher : public Dispatcher<HandlerClass> {
 
 public:
 
@@ -86,18 +86,18 @@ public:
 
   }
 
-}; // class SlaveDispatcher
+}; // class WorkerDispatcher
 
 
 template < class HandlerClass >
-class MasterDispatcher : public Dispatcher<HandlerClass> {
+class ForemanDispatcher : public Dispatcher<HandlerClass> {
 
 public:
 
   typedef Dispatcher<HandlerClass> Base;
 
 
-}; // class MasterDispatcher
+}; // class ForemanDispatcher
 
 
   }} // namespace PRODDL::Mpi

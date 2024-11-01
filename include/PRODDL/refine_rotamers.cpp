@@ -49,7 +49,7 @@ namespace PRODDL {
     m_indAct = Pot::ACT_DFL;
     m_indActW.reference(m_indAct.copy());
     m_nGroups = indexSize(m_indGroups);
-    m_indGroupsMaster.reference(m_indGroups.copy());
+    m_indGroupsForeman.reference(m_indGroups.copy());
 
     m_nIgn = indexSize(m_indIgn);
     m_ignPairs.resize(0,2);

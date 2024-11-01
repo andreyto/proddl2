@@ -45,7 +45,7 @@ def no_test_molforce():
     print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
-def no_test_c_fft_scan_slave():
+def no_test_c_fft_scan_worker():
     no_test_molforce()
     conf_io.save_config(opt["scan"],scan_opt_file)
     cmd = """\
@@ -66,8 +66,8 @@ def no_test_c_fft_scan_slave():
     print("Executing command: {}".format(cmd))
     check_call(cmd,shell=True)
 
-def no_test_c_fft_scan_master():
-    no_test_c_fft_scan_slave()
+def no_test_c_fft_scan_foreman():
+    no_test_c_fft_scan_worker()
     with open(rot_scan_list,"w") as out:
         out.write(scan_res_file+"\n")
     cmd = """\
@@ -89,7 +89,7 @@ def no_test_c_fft_scan_master():
     check_call(cmd,shell=True)
 
 def no_test_c_export():
-    no_test_c_fft_scan_master()
+    no_test_c_fft_scan_foreman()
     cmd = """\
     {wrapper} \
     proddl-export \

@@ -122,7 +122,7 @@ void process_arguments(const po::variables_map& vm) {
 	Docking<T_num>::load_from_hdf5(molforce_params_file,mfp);
 
 	if(task == "gather") {
-		Docking<T_num>::Master app;
+		Docking<T_num>::Foreman app;
 		app.init(mfp);
 		app.run();
 		string res_file;
@@ -130,7 +130,7 @@ void process_arguments(const po::variables_map& vm) {
 		app.writeResults(res_file,'b');
 	}
 	else if(task == "rot-scan") {
-		Docking<T_num>::Slave app;
+		Docking<T_num>::Worker app;
 		app.init(mfp);
 		app.run();
 	}

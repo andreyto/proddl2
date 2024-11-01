@@ -87,7 +87,7 @@ public:
 
 	virtual void run() = 0;
 
-	virtual bool isMaster() const = 0;
+	virtual bool isForeman() const = 0;
 
 
 protected:
@@ -103,7 +103,7 @@ protected:
 
 protected:
 
-	// Maximum number of translations to select in slave and send back to the master process.
+	// Maximum number of translations to select in worker and send back to the foreman process.
 
 	int maxNTrans;
 
@@ -114,12 +114,12 @@ protected:
 };
 
 
-class Master : public App {
+class Foreman : public App {
 
 public:
 
 	typedef App Base;
-	typedef Master Self;
+	typedef Foreman Self;
 
 	typedef RotFftScanIO_Collector<RotFftScanIO_Bin> RotFftScanIO_CollectorT;
 
@@ -219,7 +219,7 @@ public:
 
 	}
 
-	bool isMaster() const {
+	bool isForeman() const {
 
 		return true;
 
@@ -313,12 +313,12 @@ protected:
 };
 
 
-class Slave : public App {
+class Worker : public App {
 
 public:
 
 	typedef App Base;
-	typedef Slave Self;
+	typedef Worker Self;
 
 
 public:
@@ -513,7 +513,7 @@ public:
 	}
 
 
-	bool isMaster() const {
+	bool isForeman() const {
 
 		return false;
 

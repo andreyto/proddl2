@@ -144,7 +144,7 @@ namespace PRODDL {
 
     // Holds the initial value of m_indGroup passed to the ctor
 
-    Ints m_indGroupsMaster;
+    Ints m_indGroupsForeman;
 
 
     // part index of every atom (part can consist of many groups, an example of a part is 
@@ -214,7 +214,7 @@ namespace PRODDL {
     }
 
     void restoreIndGroups() {
-      m_indGroups = m_indGroupsMaster;
+      m_indGroups = m_indGroupsForeman;
     }
 
 
